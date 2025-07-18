@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1t2pn4wepmpt"]
 
-[ext_resource type="Script" uid="uid://dtlhil701dtfv" path="res://scripts/gui/main_ui/menu.gd" id="1_8w4bh"]
-[ext_resource type="Texture2D" uid="uid://c681amoy5i2fo" path="res://art/graphics/Background.jpg" id="2_mhnvy"]
+[ext_resource type="Script" uid="uid://bwg24m6agiv5h" path="res://scripts/gui/main_ui/menu.gd" id="1_8w4bh"]
+[ext_resource type="Texture2D" uid="uid://cvoilmep7sc0x" path="res://art/graphics/backgrounds/Background.jpg" id="2_qcgma"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="3_con2f"]
-[ext_resource type="FontFile" uid="uid://btuhlt2wotj04" path="res://art/font/SkippySharp.ttf" id="3_qcgma"]
+[ext_resource type="FontFile" uid="uid://bgkerp4n6m5c3" path="res://art/font/SkippySharp.ttf" id="3_qcgma"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_con2f"]
 font = ExtResource("3_qcgma")
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_mhnvy")
+texture = ExtResource("2_qcgma")
 
 [node name="Text" type="Label" parent="."]
 layout_mode = 1

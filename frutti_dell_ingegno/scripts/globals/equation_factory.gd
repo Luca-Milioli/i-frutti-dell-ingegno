@@ -8,7 +8,7 @@ func _to_string() -> String:
 	
 func start():
 	if self.equations.size() == 0:
-		self.equations = super.read_csv('|')
+		self.equations = super.read_csv()
 
 func get_equations():
 	return self.equations
