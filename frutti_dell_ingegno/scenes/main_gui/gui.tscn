@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8srycxdomt88"]
+[gd_scene load_steps=11 format=3 uid="uid://b8srycxdomt88"]
 
 [ext_resource type="PackedScene" uid="uid://bieiqc1mo6u2r" path="res://scenes/components/top_bar.tscn" id="1_53q0q"]
-[ext_resource type="Script" uid="uid://bfkqw3vumi2fi" path="res://scripts/gui/main_ui/gui.gd" id="1_fvce3"]
+[ext_resource type="Script" uid="uid://ba0nc4yuqopvc" path="res://scripts/gui/main_ui/gui.gd" id="1_fvce3"]
 [ext_resource type="PackedScene" uid="uid://mgklm4qm7xq8" path="res://scenes/components/popups/tutorial.tscn" id="2_8h14w"]
 [ext_resource type="PackedScene" uid="uid://bn5tlh1a225fr" path="res://scenes/components/blackboard.tscn" id="2_53q0q"]
-[ext_resource type="Texture2D" uid="uid://d0wd7mlmu7bhm" path="res://art/graphics/backgrounds/GuiBackground.jpg" id="2_k8xsf"]
+[ext_resource type="Texture2D" uid="uid://dng7fdkf8xmmi" path="res://art/graphics/backgrounds/GuiBackground.jpg" id="2_k8xsf"]
 [ext_resource type="PackedScene" uid="uid://b58mhp2m3rr8y" path="res://scenes/components/popups/reset_popup.tscn" id="3_k8xsf"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="3_ocqor"]
-[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="4_8h14w"]
+[ext_resource type="FontFile" uid="uid://c1isgompuevm" path="res://art/font/Roc_Grotesk_Bold.ttf" id="4_8h14w"]
+[ext_resource type="PackedScene" uid="uid://cij8bimtkjtsw" path="res://scenes/components/keyboard.tscn" id="9_gn6ma"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8xsf"]
 font = ExtResource("4_8h14w")
@@ -65,7 +66,7 @@ offset_top = 143.0
 offset_right = -228.0
 offset_bottom = -185.0
 
-[node name="CustomButton" parent="." instance=ExtResource("3_ocqor")]
+[node name="AnswerButton" parent="." instance=ExtResource("3_ocqor")]
 layout_mode = 1
 anchors_preset = 7
 anchor_top = 1.0
@@ -76,15 +77,29 @@ offset_right = 188.0
 offset_bottom = -55.0
 grow_vertical = 0
 
-[node name="Text" parent="CustomButton" index="0"]
-text = "Inserisci la risposta"
+[node name="Text" parent="AnswerButton" index="0"]
+text = "Inserisci risposta"
 label_settings = SubResource("LabelSettings_k8xsf")
+
+[node name="Keyboard" parent="." instance=ExtResource("9_gn6ma")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -250.0
+offset_right = 138.0
+offset_bottom = 250.0
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="game_start" from="TutorialPopup" to="." method="_on_tutorial_popup_game_start"]
 [connection signal="cancel" from="ResetPopup" to="." method="_on_reset_popup_cancel"]
 [connection signal="audio_pressed" from="TopBar" to="." method="_on_top_bar_audio_pressed"]
 [connection signal="retry_pressed" from="TopBar" to="." method="_on_top_bar_retry_pressed"]
-[connection signal="pressed" from="CustomButton" to="Blackboard" method="_on_custom_button_pressed"]
+[connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]
 
-[editable path="CustomButton"]
+[editable path="AnswerButton"]
