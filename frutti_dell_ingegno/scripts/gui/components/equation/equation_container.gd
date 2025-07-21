@@ -2,26 +2,31 @@ extends HBoxContainer
 
 const PATH_TO_FRUIT = "res://art/graphics/fruit/"
 const PATH_TO_SIGN = "res://art/graphics/signs/"
+const PATH_TO_SCENES = "res://scenes/components/equation/"
 
-func setup(equation: Equation):
+func setup(equation: Equation) -> void:
 	var size = equation.get_size()
 	
 	for i in size:
-		var fruit = preload("res://scenes/components/equation/fruit.tscn").instantiate()
+		if equation.get_coeff()[i] != 1:
+			pass
+		
+		var fruit = preload(PATH_TO_SCENES + "fruit.tscn").instantiate()
 		fruit.set_texture(load(PATH_TO_FRUIT + equation.get_variables()[i].to_lower() + ".png"))
 		
-		var sign = preload("res://scenes/components/equation/sign.tscn").instantiate()
-		sign.set_texture(load(PATH_TO_SIGN + equation.get_variables()[i] + ".png"))
+		var sign = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
+		sign.set_texture(load(PATH_TO_SIGN + equation.get_sign()[i] + ".png"))
 		
 		add_child(fruit)
 		add_child(sign)
 	
-	var eq = preload("res://scenes/components/equation/sign.tscn").instantiate()
+	var eq = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
 	eq.set_texture(load(PATH_TO_SIGN + "=.png"))
 	add_child(eq)
 	
-	var res = preload("res://scenes/components/equation/rhs.tscn").instantiate()
+	var res = preload(PATH_TO_SCENES + "rhs.tscn").instantiate()
 	res.set_text(equation.calculate_result())
+	add_child(res)
 
 func setup_last_one() -> void:
 	$Rhs.set_text("??")
