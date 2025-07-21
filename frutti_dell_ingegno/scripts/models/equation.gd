@@ -23,7 +23,10 @@ func get_values():
 
 func get_sign():
 	return self._sign
-	
+
+func get_size():
+	return self._variables.size()
+
 func calculate_result() -> int:
 	var res = get_coeff()[0] * get_values()[0]
 	

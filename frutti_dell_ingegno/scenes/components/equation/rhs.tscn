@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcnsp2uj2rkm"]
+
+[ext_resource type="FontFile" uid="uid://bgkerp4n6m5c3" path="res://art/font/SkippySharp.ttf" id="1_82omq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jy7ct"]
+font = ExtResource("1_82omq")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="Rhs" type="Label"]
+offset_right = 64.0
+offset_bottom = 64.0
+text = "??"
+label_settings = SubResource("LabelSettings_jy7ct")
+horizontal_alignment = 1
+vertical_alignment = 1

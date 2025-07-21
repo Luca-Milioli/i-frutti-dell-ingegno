@@ -68,8 +68,6 @@ grow_vertical = 1
 [connection signal="pressed" from="Back" to="." method="_on_play_pressed"]
 [connection signal="tree_entered" from="Back" to="." method="_on_play_tree_entered"]
 [connection signal="cancel" from="ResetPopup" to="." method="_on_reset_popup_cancel"]
-[connection signal="audio_pressed" from="TopBar" to="." method="_on_top_bar_audio_pressed"]
-[connection signal="retry_pressed" from="TopBar" to="." method="_on_top_bar_retry_pressed"]
 
 [editable path="Play"]
 [editable path="Back"]

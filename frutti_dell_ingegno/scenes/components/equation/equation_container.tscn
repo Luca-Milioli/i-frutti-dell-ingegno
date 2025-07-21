@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://biure6b0r513a"]
+
+[ext_resource type="Script" uid="uid://ducxx8uoomefe" path="res://scripts/gui/components/equation/equation_container.gd" id="1_jkmge"]
+
+[node name="EquationContainer" type="HBoxContainer"]
+offset_right = 566.06
+offset_bottom = 85.0
+theme_override_constants/separation = 40
+script = ExtResource("1_jkmge")
