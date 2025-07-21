@@ -8,7 +8,7 @@ func _on_menu_play_pressed() -> void:
 	await menu.kill()
 	remove_child(menu)
 	menu.queue_free()
-	EquationFactory.start()
+	
 	await _create_rounds()
 	
 	#var score = GameLogic.get_score()
