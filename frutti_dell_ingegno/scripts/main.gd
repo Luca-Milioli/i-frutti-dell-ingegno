@@ -42,7 +42,7 @@ func _create_rounds():
 	add_child(gui)
 	for i in range(GameLogic.get_max_round()):
 		var system_equation = SystemEquationsFactory.make_system_equation()
-		print(system_equation.to_string())
+		#print(system_equation.to_string())
 		
 		var blackboard = $Gui/Blackboard
 		blackboard.setup(system_equation)

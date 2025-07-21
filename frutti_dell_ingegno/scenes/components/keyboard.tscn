@@ -1,0 +1,237 @@
+[gd_scene load_steps=8 format=3 uid="uid://cij8bimtkjtsw"]
+
+[ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
+[ext_resource type="Texture2D" uid="uid://cu4qefaolgr3i" path="res://art/graphics/Confirm.png" id="2_8apod"]
+[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
+[ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
+[ext_resource type="StyleBox" uid="uid://btyamnwauw7ms" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
+[ext_resource type="StyleBox" uid="uid://dj68yep5pib4x" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_crcmg"]
+font = ExtResource("3_soaf0")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Keyboard" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -748.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v02ci")
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8apod")
+expand_mode = 1
+
+[node name="Display" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 83.0
+grow_horizontal = 2
+color = Color(0.756863, 0.898039, 1, 1)
+
+[node name="Label" type="Label" parent="Display"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "17"
+label_settings = SubResource("LabelSettings_crcmg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 107.0
+offset_right = -32.0
+offset_bottom = -191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Button1" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button1" index="0"]
+offset_bottom = -8.0
+text = "1"
+
+[node name="Button2" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button2" index="0"]
+offset_bottom = -8.0
+text = "2"
+
+[node name="Button3" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button3" index="0"]
+offset_bottom = -8.0
+text = "3"
+
+[node name="Button4" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button4" index="0"]
+offset_bottom = -8.0
+text = "4"
+
+[node name="Button5" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button5" index="0"]
+offset_bottom = -8.0
+text = "5"
+
+[node name="Button6" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button6" index="0"]
+offset_bottom = -8.0
+text = "6"
+
+[node name="Button7" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button7" index="0"]
+offset_bottom = -8.0
+text = "7"
+
+[node name="Button8" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button8" index="0"]
+offset_bottom = -8.0
+text = "8"
+
+[node name="Button9" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonsContainer/Button9" index="0"]
+offset_bottom = -8.0
+text = "9"
+
+[node name="Button0" parent="." instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -171.0
+offset_right = -180.0
+offset_bottom = -107.0
+grow_vertical = 0
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="Button0" index="0"]
+offset_bottom = -8.0
+text = "0"
+
+[node name="ButtonCancel" parent="." instance=ExtResource("4_crcmg")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 106.0
+offset_top = -171.0
+offset_right = -32.0
+offset_bottom = -107.0
+grow_vertical = 0
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="ButtonCancel" index="0"]
+offset_bottom = -8.0
+text = "c"
+
+[editable path="ButtonsContainer/Button1"]
+[editable path="ButtonsContainer/Button2"]
+[editable path="ButtonsContainer/Button3"]
+[editable path="ButtonsContainer/Button4"]
+[editable path="ButtonsContainer/Button5"]
+[editable path="ButtonsContainer/Button6"]
+[editable path="ButtonsContainer/Button7"]
+[editable path="ButtonsContainer/Button8"]
+[editable path="ButtonsContainer/Button9"]
+[editable path="Button0"]
+[editable path="ButtonCancel"]

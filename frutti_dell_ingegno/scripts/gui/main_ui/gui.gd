@@ -15,6 +15,6 @@ func _on_tutorial_popup_game_start() -> void:
 	Utils.recursive_disable_buttons(self,false)
 	$TopBar/RetryButton.disabled = false
 	$Blackboard.visible = true
-	#$Round1/Question._on_tree_entered()
+	$Blackboard.first_animation()
 	$TopBar.text_first_entrance()
 	

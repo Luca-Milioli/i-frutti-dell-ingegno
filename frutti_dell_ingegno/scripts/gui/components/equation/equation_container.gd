@@ -30,3 +30,11 @@ func setup(equation: Equation) -> void:
 
 func setup_last_one() -> void:
 	$Rhs.set_text("??")
+
+
+func _on_tree_entered() -> void:
+	self.get_parent().modulate.a = 1.0
+	self.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, 0.5)
+	await tween.finished

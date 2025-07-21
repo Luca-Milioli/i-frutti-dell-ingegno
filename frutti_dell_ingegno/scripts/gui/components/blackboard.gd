@@ -16,8 +16,20 @@ func kill_children():
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
+
+func first_animation():
+	self.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, 0.5)
+	await tween.finished
+
+func kill_animation() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.5)
+	await tween.finished
 	
 func _on_custom_button_pressed() -> void:
+	await kill_animation()
 	kill_children()
 	killed.emit()
 	
