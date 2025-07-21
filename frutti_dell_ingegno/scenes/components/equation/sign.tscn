@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bywmn7ogp4ppd"]
 
-[ext_resource type="Texture2D" uid="uid://c5erpnt2bdmj8" path="res://art/graphics/signs/+.png" id="1_n4q66"]
+[ext_resource type="Texture2D" uid="uid://cib5uhjjwhm1j" path="res://art/graphics/signs/+.png" id="1_n4q66"]
 
 [node name="Sign" type="TextureRect"]
 custom_minimum_size = Vector2(25, 25)
@@ -18,3 +18,4 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_n4q66")
+stretch_mode = 3
