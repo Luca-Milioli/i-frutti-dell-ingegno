@@ -32,5 +32,5 @@ func text_first_entrance() -> void:
 	tween.tween_property($Text, "modulate:a", 1.0, 0.5)
 
 func update_text():
-	$Text.set_text(str(Round.get_round_count()) + " di " + str(GameLogic.get_max_round()))
+	pass#$Text.set_text(str(Round.get_round_count()) + " di " + str(GameLogic.get_max_round()))
 	

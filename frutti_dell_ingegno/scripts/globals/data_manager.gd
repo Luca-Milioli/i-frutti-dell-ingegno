@@ -8,7 +8,7 @@ func read_csv(separator = ",") -> Array:
 	var file := FileAccess.open(self.DATA_PATH, FileAccess.READ)
 
 	if not file:
-		push_error("Errore nell'aprire il file.")
+		push_error("Error, data file not found.")
 		return []
 
 	while not file.eof_reached():

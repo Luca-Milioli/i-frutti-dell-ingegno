@@ -13,19 +13,19 @@ func setup(equation: Equation) -> void:
 		
 		var fruit = preload(PATH_TO_SCENES + "fruit.tscn").instantiate()
 		fruit.set_texture(load(PATH_TO_FRUIT + equation.get_variables()[i].to_lower() + ".png"))
-		
-		var sign = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
-		sign.set_texture(load(PATH_TO_SIGN + equation.get_sign()[i] + ".png"))
-		
 		add_child(fruit)
-		add_child(sign)
+		
+		if i < size - 1:
+			var sign = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
+			sign.set_texture(load(PATH_TO_SIGN + equation.get_sign()[i] + ".png"))
+			add_child(sign)
 	
 	var eq = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
 	eq.set_texture(load(PATH_TO_SIGN + "=.png"))
 	add_child(eq)
 	
 	var res = preload(PATH_TO_SCENES + "rhs.tscn").instantiate()
-	res.set_text(equation.calculate_result())
+	res.set_text(str(equation.calculate_result()))
 	add_child(res)
 
 func setup_last_one() -> void:

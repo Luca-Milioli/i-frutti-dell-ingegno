@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bil7737y78aod"]
 
-[ext_resource type="Texture2D" uid="uid://bvqghp13djj4x" path="res://art/graphics/fruit/albicocca.png" id="1_op25j"]
+[ext_resource type="Texture2D" uid="uid://wvai68f38d8e" path="res://art/graphics/fruit/albicocca.png" id="1_op25j"]
 
 [node name="Fruit" type="TextureRect"]
+custom_minimum_size = Vector2(85, 85)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -20,6 +20,7 @@ func make_system_equation():
 	
 	_equation_system_created += 1
 	return SystemEquation.new(array, block_size)
+	
 
 func calculate_block_size():
 	return 4
