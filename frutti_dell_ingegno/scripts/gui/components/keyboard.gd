@@ -11,5 +11,23 @@ func _connect_buttons(node):
 		else:
 			_connect_buttons(child)
 
+func _new_text(button_pressed) -> StringName:
+	if button_pressed == $ButtonCancel:
+		return ""
+	
+	var text = $Display/Label.get_text()
+	var replace = false
+		
+	if (text == "" or text == "0" or text == "Insert result..."):
+		replace = true
+		
+	if int(text) <= 99 or text == "":
+		if replace:
+			text = button_pressed.get_node("Text").get_text()
+		else:
+			text += button_pressed.get_node("Text").get_text()
+	
+	return text
+	
 func _on_button_pressed(button):
-	print(button.get_node("Text").get_text())
+	$Display/Label.set_text(_new_text(button))
