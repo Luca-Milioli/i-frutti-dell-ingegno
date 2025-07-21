@@ -38,7 +38,7 @@ func _on_reset_confirmed() -> void:
 
 func _create_rounds():
 	var gui = preload("res://scenes/main_gui/gui.tscn").instantiate()
-	#gui.get_node("ResetPopup/SplitContainer/Go").pressed.connect(_on_reset_confirmed)
+	gui.get_node("ResetPopup/SplitContainer/Go").pressed.connect(_on_reset_confirmed)
 	add_child(gui)
 	for i in range(GameLogic.get_max_round()):
 		var system_equation = SystemEquationsFactory.make_system_equation()

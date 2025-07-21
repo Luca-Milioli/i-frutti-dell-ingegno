@@ -26,11 +26,6 @@ func _on_retry_button_pressed() -> void:
 	self.retry_pressed.emit()
 
 func text_first_entrance() -> void:
-	update_text()
 	$Text.modulate.a = 0.0
 	var tween = create_tween()
 	tween.tween_property($Text, "modulate:a", 1.0, 0.5)
-
-func update_text():
-	pass#$Text.set_text(str(Round.get_round_count()) + " di " + str(GameLogic.get_max_round()))
-	

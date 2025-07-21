@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8srycxdomt88"]
+[gd_scene load_steps=9 format=3 uid="uid://b8srycxdomt88"]
 
 [ext_resource type="PackedScene" uid="uid://bieiqc1mo6u2r" path="res://scenes/components/top_bar.tscn" id="1_53q0q"]
+[ext_resource type="Script" uid="uid://bfkqw3vumi2fi" path="res://scenes/main_gui/gui.gd" id="1_fvce3"]
+[ext_resource type="PackedScene" uid="uid://mgklm4qm7xq8" path="res://scenes/components/popups/tutorial.tscn" id="2_8h14w"]
 [ext_resource type="PackedScene" uid="uid://bn5tlh1a225fr" path="res://scenes/components/blackboard.tscn" id="2_53q0q"]
+[ext_resource type="PackedScene" uid="uid://b58mhp2m3rr8y" path="res://scenes/components/popups/reset_popup.tscn" id="3_k8xsf"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="3_ocqor"]
 [ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="4_8h14w"]
 
@@ -17,6 +20,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fvce3")
+
+[node name="TutorialPopup" parent="." instance=ExtResource("2_8h14w")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 200.0
+offset_top = 247.0
+offset_right = 812.0
+offset_bottom = 537.0
+
+[node name="ResetPopup" parent="." instance=ExtResource("3_k8xsf")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 200.0
+offset_top = 193.0
+offset_right = 812.0
+offset_bottom = 547.0
 
 [node name="TopBar" parent="." instance=ExtResource("1_53q0q")]
 layout_mode = 2
@@ -31,6 +50,7 @@ offset_right = 906.0
 offset_bottom = 101.0
 
 [node name="Blackboard" parent="." instance=ExtResource("2_53q0q")]
+visible = false
 layout_mode = 1
 offset_left = 229.0
 offset_top = 143.0
@@ -52,6 +72,11 @@ grow_vertical = 0
 text = "Inserisci la risposta"
 label_settings = SubResource("LabelSettings_k8xsf")
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="game_start" from="TutorialPopup" to="." method="_on_tutorial_popup_game_start"]
+[connection signal="cancel" from="ResetPopup" to="." method="_on_reset_popup_cancel"]
+[connection signal="audio_pressed" from="TopBar" to="." method="_on_top_bar_audio_pressed"]
+[connection signal="retry_pressed" from="TopBar" to="." method="_on_top_bar_retry_pressed"]
 [connection signal="pressed" from="CustomButton" to="Blackboard" method="_on_custom_button_pressed"]
 
 [editable path="CustomButton"]
