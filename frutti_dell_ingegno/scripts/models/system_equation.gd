@@ -1,22 +1,27 @@
 class_name SystemEquation
 
 var _equations : Array[Equation]
-var _block_size : int
+var _n_equation : int
 var _final_result : int
+var _score: int
 
-func _init(equations : Array[Equation], block_size = 4) -> void:
+func _init(equations : Array[Equation], _score: int = 1) -> void:
 	self._equations = equations
-	self._block_size = block_size
-	self._final_result = self._equations[block_size - 1].calculate_result()
+	self._n_equation = equations.size()
+	self._final_result = self._equations[_n_equation - 1].calculate_result()
+	self._score = _score
 
-func get_equations():
+func get_equations() -> Array[Equation]:
 	return self._equations
 	
-func get_final_result():
+func get_final_result() -> int:
 	return self._final_result
 
-func get_block_size():
-	return self._block_size
+func get_n_equation() -> int:
+	return self._n_equation
+
+func get_score() -> int:
+	return self._score
 
 func _to_string() -> String:
 	var text = ""
