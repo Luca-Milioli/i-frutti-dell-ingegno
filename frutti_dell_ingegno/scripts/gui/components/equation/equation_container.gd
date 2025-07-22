@@ -4,7 +4,13 @@ const PATH_TO_FRUIT = "res://art/graphics/fruit/"
 const PATH_TO_SIGN = "res://art/graphics/signs/"
 const PATH_TO_SCENES = "res://scenes/components/equation/"
 
+var _equation: Equation
+
+func get_equation() -> Equation:
+	return self._equation
+
 func setup(equation: Equation) -> void:
+	self._equation = equation
 	var size = equation.get_size()
 	
 	for i in size:

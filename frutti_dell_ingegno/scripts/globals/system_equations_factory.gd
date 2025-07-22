@@ -29,5 +29,4 @@ func make_system_equation() -> SystemEquation:
 	for i in size:
 		equations.append(Equation.new(system[i]["coeff"], system[i]["var"], system[i]["value"], system[i]["sign"]))
 	
-	GameLogic.increase_max_score(1)
-	return SystemEquation.new(equations, 1)
+	return SystemEquation.new(equations)

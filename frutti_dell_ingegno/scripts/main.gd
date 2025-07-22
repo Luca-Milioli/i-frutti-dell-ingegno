@@ -36,11 +36,8 @@ func _create_rounds():
 	add_child(gui)
 	for i in range(GameLogic.MAX_ROUND):
 		var system_equation = SystemEquationsFactory.make_system_equation()
-		#print(system_equation.to_string())
 		
-		var blackboard = $Gui/Blackboard
-		blackboard.setup(system_equation)
+		$Gui/Blackboard.setup(system_equation)
 		
-		#gui.move_child(round, -3)
-		await blackboard.killed
+		await $Gui/Blackboard.killed
 	gui.game_over()

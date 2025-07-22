@@ -1,17 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://cij8bimtkjtsw"]
+[gd_scene load_steps=10 format=3 uid="uid://cij8bimtkjtsw"]
 
-[ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
-[ext_resource type="Texture2D" uid="uid://cu4qefaolgr3i" path="res://art/graphics/Confirm.png" id="2_8apod"]
-[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
+[ext_resource type="Script" uid="uid://dqksmc3c7t0kc" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
+[ext_resource type="Texture2D" uid="uid://bc5thws4xb6ut" path="res://art/graphics/Confirm.png" id="2_8apod"]
+[ext_resource type="FontFile" uid="uid://c1isgompuevm" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
 [ext_resource type="StyleBox" uid="uid://b5yb3flb6n6xl" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
-[ext_resource type="StyleBox" uid="uid://dj68yep5pib4x" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
-[ext_resource type="LabelSettings" uid="uid://bd1lkhrcthedw" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
+[ext_resource type="StyleBox" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
+[ext_resource type="LabelSettings" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_crcmg"]
 font = ExtResource("3_soaf0")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfr1r"]
+font = ExtResource("3_soaf0")
+font_size = 40
+font_color = Color(0.0588235, 0.47451, 0.529412, 1)
 
 [node name="Keyboard" type="Control"]
 top_level = true
@@ -211,6 +216,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="Button0" index="0"]
 offset_bottom = -8.0
 text = "0"
+label_settings = SubResource("LabelSettings_bfr1r")
 
 [node name="ButtonCancel" parent="." instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)

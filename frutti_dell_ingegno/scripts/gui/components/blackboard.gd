@@ -28,15 +28,12 @@ func kill_animation() -> void:
 	tween.tween_property(self, "modulate:a", 0.0, 0.5)
 	await tween.finished
 
-func _on_custom_button_pressed() -> void:
+func kill() -> void:
 	await kill_animation()
 	kill_children()
 	killed.emit()
-	
 
 func _on_confirm_pressed() -> void:
 	var text : StringName = $"../Keyboard/Display/Label".get_text()
 	if text.is_valid_int():
 		$FinalEquation/Rhs.set_text(text)
-	
-	
