@@ -213,14 +213,6 @@ offset_bottom = -8.0
 text = "0"
 label_settings = ExtResource("7_crq44")
 
-[node name="Backspace" type="TextureButton" parent="ButtonsContainer"]
-layout_mode = 2
-texture_normal = ExtResource("8_lowah")
-texture_pressed = ExtResource("9_1yngc")
-texture_hover = ExtResource("9_1yngc")
-texture_disabled = ExtResource("8_lowah")
-ignore_texture_size = true
-
 [node name="Confirm" parent="." instance=ExtResource("4_crcmg")]
 layout_mode = 1
 anchors_preset = 12
@@ -246,6 +238,18 @@ offset_right = 58.5
 offset_bottom = 6.0
 text = "Conferma"
 label_settings = SubResource("LabelSettings_hy5n8")
+
+[node name="Backspace" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 106.0
+offset_top = 329.0
+offset_right = 244.0
+offset_bottom = 393.0
+texture_normal = ExtResource("8_lowah")
+texture_pressed = ExtResource("9_1yngc")
+texture_hover = ExtResource("9_1yngc")
+texture_disabled = ExtResource("8_lowah")
+ignore_texture_size = true
 
 [editable path="ButtonsContainer/Button1"]
 [editable path="ButtonsContainer/Button2"]

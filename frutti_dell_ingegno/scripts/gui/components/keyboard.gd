@@ -11,13 +11,13 @@ func reset():
 	
 func _connect_buttons(node):
 	for child in node.get_children():
-		if child is Button:
+		if child is BaseButton:
 			child.connect("pressed", _on_button_pressed.bind(child))
 		else:
 			_connect_buttons(child)
 
 func _new_text(button_pressed) -> StringName:
-	if button_pressed == $ButtonCancel:
+	if button_pressed == $Backspace:
 		return ""
 	
 	var text = $Display/Label.get_text()

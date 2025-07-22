@@ -115,6 +115,5 @@ offset_bottom = 250.0
 [editable path="Keyboard/ButtonsContainer/Button7"]
 [editable path="Keyboard/ButtonsContainer/Button8"]
 [editable path="Keyboard/ButtonsContainer/Button9"]
-[editable path="Keyboard/Button0"]
-[editable path="Keyboard/ButtonCancel"]
+[editable path="Keyboard/ButtonsContainer/Button0"]
 [editable path="Keyboard/Confirm"]
