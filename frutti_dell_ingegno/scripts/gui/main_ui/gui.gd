@@ -4,8 +4,8 @@ func game_over():
 	super.fade_out($TopBar/Text)
 	
 func _on_tree_entered() -> void:
-	await super.fade_in($".")
 	Utils.recursive_disable_buttons(self, true)
+	await super.fade_in($".")
 	await super.fade_in($TutorialPopup)
 	Utils.recursive_disable_buttons($TutorialPopup, false)
 
@@ -26,4 +26,5 @@ func _on_answer_button_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	await super.fade_out($Keyboard)
-	# vedi gli altri fade out
+	$Keyboard.reset()
+	Utils.recursive_disable_buttons(self, false)

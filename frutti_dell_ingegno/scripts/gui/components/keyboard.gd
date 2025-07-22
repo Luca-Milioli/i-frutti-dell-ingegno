@@ -6,6 +6,9 @@ var drag_offset: Vector2
 func _ready() -> void:
 	_connect_buttons(self)
 
+func reset():
+	$Display/Label.set_text("Insert result...")
+	
 func _connect_buttons(node):
 	for child in node.get_children():
 		if child is Button:
@@ -23,7 +26,7 @@ func _new_text(button_pressed) -> StringName:
 	if (text == "" or text == "0" or text == "Insert result..."):
 		replace = true
 		
-	if int(text) <= 99 or text == "":
+	if (int(text) <= 99 or text == "") and button_pressed != $Confirm:
 		if replace:
 			text = button_pressed.get_node("Text").get_text()
 		else:

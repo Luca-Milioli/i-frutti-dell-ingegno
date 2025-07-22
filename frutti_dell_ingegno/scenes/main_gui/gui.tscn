@@ -102,6 +102,7 @@ offset_bottom = 250.0
 [connection signal="retry_pressed" from="TopBar" to="." method="_on_top_bar_retry_pressed"]
 [connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]
 [connection signal="pressed" from="Keyboard/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Keyboard/Confirm" to="Blackboard" method="_on_confirm_pressed"]
 
 [editable path="AnswerButton"]
 [editable path="Keyboard"]

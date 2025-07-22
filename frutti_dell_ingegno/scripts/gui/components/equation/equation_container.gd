@@ -30,6 +30,7 @@ func setup(equation: Equation) -> void:
 
 func setup_last_one() -> void:
 	$Rhs.set_text("??")
+	self.set_name("FinalEquation")
 
 
 func _on_tree_entered() -> void:
