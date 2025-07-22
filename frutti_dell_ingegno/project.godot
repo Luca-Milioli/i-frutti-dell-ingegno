@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameLogic="*res://scripts/globals/game_logic.gd"
-EquationFactory="*res://scripts/globals/equation_factory.gd"
 SystemEquationsFactory="*res://scripts/globals/system_equations_factory.gd"
 
 [display]

@@ -10,8 +10,8 @@
 ,
 1,zucchina,34,+,1,mela,3,+,1,mela,3
 1,mela,3,x,1,mela,3
-1,banana,36,-,1,zucchina,34
-1,banana,36,+,1,zucchina,34,+,1,mela,3
+1,arancia,36,-,1,zucchina,34
+1,arancia,36,+,1,zucchina,34,+,1,mela,3
 ,
 1,mela,7,+,1,mela,7,+,1,mela,7
 1,arancia,28,:,1,mela,7
