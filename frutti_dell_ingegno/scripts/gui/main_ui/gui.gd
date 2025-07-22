@@ -22,3 +22,8 @@ func _on_answer_button_pressed() -> void:
 	$Keyboard.visible = true
 	await super.fade_in($Keyboard, 1.0, 0.8)
 	Utils.recursive_disable_buttons($Keyboard, false)
+
+
+func _on_confirm_pressed() -> void:
+	await super.fade_out($Keyboard)
+	# vedi gli altri fade out

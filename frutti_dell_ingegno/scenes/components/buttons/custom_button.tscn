@@ -1,13 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cixb2slrwfeax"]
+[gd_scene load_steps=4 format=3 uid="uid://cixb2slrwfeax"]
 
 [ext_resource type="StyleBox" uid="uid://b2doi7du2nq53" path="res://art/styleboxes/normal_button.tres" id="1_bfr1r"]
 [ext_resource type="StyleBox" uid="uid://r7f1u1uip66p" path="res://art/styleboxes/hover_button.tres" id="2_32hcy"]
-[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_16a54"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bfr1r"]
-font = ExtResource("3_16a54")
-font_size = 40
-font_color = Color(0.0588235, 0.47451, 0.529412, 1)
+[ext_resource type="LabelSettings" uid="uid://dtg03r1hbc1en" path="res://art/styleboxes/label_settings_40.tres" id="3_16a54"]
 
 [node name="CustomButton" type="Button"]
 anchors_preset = 8
@@ -40,6 +35,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Gioca"
-label_settings = SubResource("LabelSettings_bfr1r")
+label_settings = ExtResource("3_16a54")
 horizontal_alignment = 1
 vertical_alignment = 1

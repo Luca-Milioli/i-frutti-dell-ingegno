@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cij8bimtkjtsw"]
+[gd_scene load_steps=9 format=3 uid="uid://cij8bimtkjtsw"]
 
-[ext_resource type="Script" uid="uid://dqksmc3c7t0kc" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
-[ext_resource type="Texture2D" uid="uid://bc5thws4xb6ut" path="res://art/graphics/Confirm.png" id="2_8apod"]
-[ext_resource type="FontFile" uid="uid://c1isgompuevm" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
+[ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
+[ext_resource type="Texture2D" uid="uid://cu4qefaolgr3i" path="res://art/graphics/Confirm.png" id="2_8apod"]
+[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
 [ext_resource type="StyleBox" uid="uid://b5yb3flb6n6xl" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
-[ext_resource type="StyleBox" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
+[ext_resource type="StyleBox" uid="uid://dj68yep5pib4x" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
+[ext_resource type="LabelSettings" uid="uid://bd1lkhrcthedw" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_crcmg"]
 font = ExtResource("3_soaf0")
@@ -65,7 +66,7 @@ anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 107.0
 offset_right = -32.0
-offset_bottom = -191.0
+offset_bottom = -181.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
@@ -83,6 +84,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button1" index="0"]
 offset_bottom = -8.0
 text = "1"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button2" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -95,6 +97,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button2" index="0"]
 offset_bottom = -8.0
 text = "2"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button3" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -107,6 +110,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button3" index="0"]
 offset_bottom = -8.0
 text = "3"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button4" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -119,6 +123,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button4" index="0"]
 offset_bottom = -8.0
 text = "4"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button5" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -131,6 +136,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button5" index="0"]
 offset_bottom = -8.0
 text = "5"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button6" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -143,6 +149,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button6" index="0"]
 offset_bottom = -8.0
 text = "6"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button7" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -155,6 +162,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button7" index="0"]
 offset_bottom = -8.0
 text = "7"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button8" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -167,6 +175,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button8" index="0"]
 offset_bottom = -8.0
 text = "8"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button9" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -179,6 +188,7 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonsContainer/Button9" index="0"]
 offset_bottom = -8.0
 text = "9"
+label_settings = ExtResource("7_crq44")
 
 [node name="Button0" parent="." instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
@@ -223,6 +233,29 @@ theme_override_styles/normal = ExtResource("5_crq44")
 [node name="Text" parent="ButtonCancel" index="0"]
 offset_bottom = -8.0
 text = "c"
+label_settings = ExtResource("7_crq44")
+
+[node name="Confirm" parent="." instance=ExtResource("4_crcmg")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 32.0
+offset_top = 417.0
+offset_right = 244.0
+offset_bottom = 468.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/disabled = ExtResource("5_crq44")
+theme_override_styles/hover = ExtResource("6_1hbf5")
+theme_override_styles/pressed = ExtResource("6_1hbf5")
+theme_override_styles/normal = ExtResource("5_crq44")
+
+[node name="Text" parent="Confirm" index="0"]
+text = "Conferma"
+label_settings = ExtResource("7_crq44")
 
 [editable path="ButtonsContainer/Button1"]
 [editable path="ButtonsContainer/Button2"]
@@ -235,3 +268,4 @@ text = "c"
 [editable path="ButtonsContainer/Button9"]
 [editable path="Button0"]
 [editable path="ButtonCancel"]
+[editable path="Confirm"]
