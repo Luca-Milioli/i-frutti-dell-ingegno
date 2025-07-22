@@ -1,15 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cij8bimtkjtsw"]
+[gd_scene load_steps=15 format=3 uid="uid://cij8bimtkjtsw"]
 
-[ext_resource type="Script" uid="uid://dqksmc3c7t0kc" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
-[ext_resource type="Texture2D" uid="uid://b1kkueiwbv14a" path="res://art/graphics/Calc.png" id="2_1yngc"]
-[ext_resource type="Texture2D" uid="uid://06kpiwe245n" path="res://art/graphics/CalculatorDisplay.png" id="3_drl6p"]
-[ext_resource type="FontFile" uid="uid://c1isgompuevm" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
+[ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
+[ext_resource type="Texture2D" uid="uid://bco0quon0hlfe" path="res://art/graphics/Calc.png" id="2_1yngc"]
+[ext_resource type="Texture2D" uid="uid://dsu45cyrr5xof" path="res://art/graphics/CalculatorDisplay.png" id="3_drl6p"]
+[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
 [ext_resource type="StyleBox" uid="uid://b5yb3flb6n6xl" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
 [ext_resource type="StyleBox" uid="uid://b0hxy8ccvn8ie" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
 [ext_resource type="LabelSettings" uid="uid://dca8ghc2m7vq5" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
-[ext_resource type="Texture2D" uid="uid://c5wfx33f8vwsw" path="res://art/graphics/buttons/Backspace.png" id="8_lowah"]
-[ext_resource type="Texture2D" uid="uid://chls1hrmbt65y" path="res://art/graphics/buttons/Backspace_hover.png" id="9_1yngc"]
+[ext_resource type="Texture2D" uid="uid://b6phgk3t2uuqc" path="res://art/graphics/buttons/Backspace.png" id="8_lowah"]
+[ext_resource type="Texture2D" uid="uid://qkkqq11ieivp" path="res://art/graphics/buttons/Backspace_hover.png" id="9_1yngc"]
+[ext_resource type="StyleBox" uid="uid://j41qyryuoe82" path="res://art/styleboxes/close_button.tres" id="11_hy5n8"]
+[ext_resource type="StyleBox" uid="uid://bcx5dycbjfqlt" path="res://art/styleboxes/close_button_hover.tres" id="12_hl3es"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_crcmg"]
 font = ExtResource("3_soaf0")
@@ -250,6 +252,22 @@ texture_pressed = ExtResource("9_1yngc")
 texture_hover = ExtResource("9_1yngc")
 texture_disabled = ExtResource("8_lowah")
 ignore_texture_size = true
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -28.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 28.0
+grow_horizontal = 0
+focus_mode = 0
+theme_override_styles/disabled = ExtResource("11_hy5n8")
+theme_override_styles/hover = ExtResource("12_hl3es")
+theme_override_styles/pressed = ExtResource("12_hl3es")
+theme_override_styles/normal = ExtResource("11_hy5n8")
 
 [editable path="ButtonsContainer/Button1"]
 [editable path="ButtonsContainer/Button2"]

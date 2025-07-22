@@ -30,10 +30,15 @@ func _on_answer_button_pressed() -> void:
 		$AnswerButton/Text.set_text("Inserisci risposta")
 		Utils.recursive_disable_buttons($AnswerButton, false)
 
-
-func _on_confirm_pressed() -> void:
-	if $Keyboard/Display/Label.get_text().is_valid_int():
-		$AnswerButton/Text.set_text("Invia risposta")
+func _close_keyboard():
 	await super.fade_out($Keyboard)
 	$Keyboard.reset()
 	Utils.recursive_disable_buttons(self, false)
+	
+func _on_confirm_pressed() -> void:
+	if $Keyboard/Display/Label.get_text().is_valid_int():
+		$AnswerButton/Text.set_text("Invia risposta")
+	_close_keyboard()
+
+func _on_close_button_pressed() -> void:
+	_close_keyboard()
