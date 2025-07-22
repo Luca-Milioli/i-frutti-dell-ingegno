@@ -1,21 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://cij8bimtkjtsw"]
+[gd_scene load_steps=13 format=3 uid="uid://cij8bimtkjtsw"]
 
 [ext_resource type="Script" uid="uid://dqksmc3c7t0kc" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
-[ext_resource type="Texture2D" uid="uid://bc5thws4xb6ut" path="res://art/graphics/Confirm.png" id="2_8apod"]
+[ext_resource type="Texture2D" uid="uid://b1kkueiwbv14a" path="res://art/graphics/Calc.png" id="2_1yngc"]
+[ext_resource type="Texture2D" uid="uid://06kpiwe245n" path="res://art/graphics/CalculatorDisplay.png" id="3_drl6p"]
 [ext_resource type="FontFile" uid="uid://c1isgompuevm" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
 [ext_resource type="StyleBox" uid="uid://b5yb3flb6n6xl" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
-[ext_resource type="StyleBox" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
-[ext_resource type="LabelSettings" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
+[ext_resource type="StyleBox" uid="uid://b0hxy8ccvn8ie" path="res://art/styleboxes/hover_button_square.tres" id="6_1hbf5"]
+[ext_resource type="LabelSettings" uid="uid://dca8ghc2m7vq5" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
+[ext_resource type="Texture2D" uid="uid://c5wfx33f8vwsw" path="res://art/graphics/buttons/Backspace.png" id="8_lowah"]
+[ext_resource type="Texture2D" uid="uid://chls1hrmbt65y" path="res://art/graphics/buttons/Backspace_hover.png" id="9_1yngc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_crcmg"]
 font = ExtResource("3_soaf0")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_bfr1r"]
+[sub_resource type="LabelSettings" id="LabelSettings_hy5n8"]
 font = ExtResource("3_soaf0")
-font_size = 40
+font_size = 24
 font_color = Color(0.0588235, 0.47451, 0.529412, 1)
 
 [node name="Keyboard" type="Control"]
@@ -35,12 +38,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8apod")
-expand_mode = 1
+texture = ExtResource("2_1yngc")
+stretch_mode = 2
 
-[node name="Display" type="ColorRect" parent="."]
+[node name="Display" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -49,7 +53,8 @@ offset_top = 32.0
 offset_right = -32.0
 offset_bottom = 83.0
 grow_horizontal = 2
-color = Color(0.756863, 0.898039, 1, 1)
+texture = ExtResource("3_drl6p")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Display"]
 layout_mode = 1
@@ -71,7 +76,7 @@ anchor_bottom = 1.0
 offset_left = 32.0
 offset_top = 107.0
 offset_right = -32.0
-offset_bottom = -181.0
+offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
@@ -195,73 +200,52 @@ offset_bottom = -8.0
 text = "9"
 label_settings = ExtResource("7_crq44")
 
-[node name="Button0" parent="." instance=ExtResource("4_crcmg")]
+[node name="Button0" parent="ButtonsContainer" instance=ExtResource("4_crcmg")]
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 1
-anchors_preset = 12
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -171.0
-offset_right = -180.0
-offset_bottom = -107.0
-grow_vertical = 0
+layout_mode = 2
 theme_override_styles/disabled = ExtResource("5_crq44")
 theme_override_styles/hover = ExtResource("6_1hbf5")
 theme_override_styles/pressed = ExtResource("6_1hbf5")
 theme_override_styles/normal = ExtResource("5_crq44")
 
-[node name="Text" parent="Button0" index="0"]
+[node name="Text" parent="ButtonsContainer/Button0" index="0"]
 offset_bottom = -8.0
 text = "0"
-label_settings = SubResource("LabelSettings_bfr1r")
+label_settings = ExtResource("7_crq44")
 
-[node name="ButtonCancel" parent="." instance=ExtResource("4_crcmg")]
-custom_minimum_size = Vector2(64, 64)
+[node name="Backspace" type="TextureButton" parent="ButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_lowah")
+texture_pressed = ExtResource("9_1yngc")
+texture_hover = ExtResource("9_1yngc")
+texture_disabled = ExtResource("8_lowah")
+ignore_texture_size = true
+
+[node name="Confirm" parent="." instance=ExtResource("4_crcmg")]
 layout_mode = 1
 anchors_preset = 12
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 106.0
-offset_top = -171.0
-offset_right = -32.0
-offset_bottom = -107.0
-grow_vertical = 0
-theme_override_styles/disabled = ExtResource("5_crq44")
-theme_override_styles/hover = ExtResource("6_1hbf5")
-theme_override_styles/pressed = ExtResource("6_1hbf5")
-theme_override_styles/normal = ExtResource("5_crq44")
-
-[node name="Text" parent="ButtonCancel" index="0"]
-offset_bottom = -8.0
-text = "c"
-label_settings = ExtResource("7_crq44")
-
-[node name="Confirm" parent="." instance=ExtResource("4_crcmg")]
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = 32.0
-offset_top = 417.0
-offset_right = 244.0
-offset_bottom = 468.0
-grow_horizontal = 1
-grow_vertical = 1
-theme_override_styles/disabled = ExtResource("5_crq44")
-theme_override_styles/hover = ExtResource("6_1hbf5")
-theme_override_styles/pressed = ExtResource("6_1hbf5")
-theme_override_styles/normal = ExtResource("5_crq44")
+offset_top = -83.0
+offset_right = -32.0
+offset_bottom = -11.0
+grow_vertical = 0
 
 [node name="Text" parent="Confirm" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -19.0
+offset_right = 58.5
+offset_bottom = 6.0
 text = "Conferma"
-label_settings = ExtResource("7_crq44")
+label_settings = SubResource("LabelSettings_hy5n8")
 
 [editable path="ButtonsContainer/Button1"]
 [editable path="ButtonsContainer/Button2"]
@@ -272,6 +256,5 @@ label_settings = ExtResource("7_crq44")
 [editable path="ButtonsContainer/Button7"]
 [editable path="ButtonsContainer/Button8"]
 [editable path="ButtonsContainer/Button9"]
-[editable path="Button0"]
-[editable path="ButtonCancel"]
+[editable path="ButtonsContainer/Button0"]
 [editable path="Confirm"]

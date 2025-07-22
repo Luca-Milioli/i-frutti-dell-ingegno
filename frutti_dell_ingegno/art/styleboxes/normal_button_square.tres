@@ -1,7 +1,7 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b5yb3flb6n6xl"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fwv7g"]
-load_path = "res://.godot/imported/Button.png-a452870ddd997595ceb428fa4e07bf50.ctex"
+[ext_resource type="Texture2D" uid="uid://0oh4ksvt3r4w" path="res://art/graphics/buttons/Number.png" id="1_hxye2"]
 
 [resource]
-texture = SubResource("CompressedTexture2D_fwv7g")
+texture = ExtResource("1_hxye2")
+expand_margin_bottom = 12.0
