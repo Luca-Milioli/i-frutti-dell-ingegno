@@ -13,7 +13,7 @@ func _on_menu_play_pressed() -> void:
 	
 	var win = GameLogic.win()
 	
-	$Gui.queue_free()
+	
 	var next_scene : Node
 	if(win):
 		next_scene = preload("res://scenes/main_gui/menu/end_menu.tscn").instantiate()
@@ -22,6 +22,10 @@ func _on_menu_play_pressed() -> void:
 	
 	next_scene.back_pressed.connect(_on_end_menu_back_pressed)
 	next_scene.play_pressed.connect(_on_reset)
+	
+	await $Gui.kill()
+	$Gui.queue_free()
+	
 	add_child(next_scene)
 
 func _on_reset():
