@@ -12,6 +12,11 @@ func _on_back_pressed() -> void:
 	back_pressed.emit()
 
 func _on_tree_entered() -> void:
+	match type:
+		1:
+			AudioManager.win()
+		2:
+			AudioManager.lose()
 	var tween = create_tween()
 	self.modulate.a = 0.0
 	tween.tween_property(self, "modulate:a", 1.0, 1.3)

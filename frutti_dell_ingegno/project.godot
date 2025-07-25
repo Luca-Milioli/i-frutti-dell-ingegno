@@ -13,12 +13,13 @@ config_version=5
 config/name="Frutti dell ingegno"
 run/main_scene="uid://ce2uirdja3rif"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 GameLogic="*res://scripts/globals/game_logic.gd"
 SystemEquationsFactory="*res://scripts/globals/system_equations_factory.gd"
+AudioManager="*res://scenes/audio_manager.tscn"
 
 [display]
 

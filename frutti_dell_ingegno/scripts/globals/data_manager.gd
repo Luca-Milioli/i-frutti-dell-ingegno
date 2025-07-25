@@ -4,13 +4,23 @@ class_name DataManager
 const DATA_PATH = "res://data/data_equation.csv"
 var data : Array
 
+static func get_max_rounds():
+	var file = FileAccess.open(DATA_PATH, FileAccess.READ)
+	var rounds = file.get_line().to_int()
+	file.close()
+	
+	return rounds
+	
 func read_csv(separator = ",") -> Array:
 	var file := FileAccess.open(self.DATA_PATH, FileAccess.READ)
 
 	if not file:
 		push_error("Error, data file not found.")
 		return []
-
+	
+	# first line is MAX ROUNDS
+	file.get_line()
+	
 	while not file.eof_reached():
 		var system = []
 		while not file.eof_reached():

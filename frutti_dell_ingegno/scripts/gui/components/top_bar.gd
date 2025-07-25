@@ -1,9 +1,12 @@
 extends HBoxContainer
 
 signal retry_pressed
-signal audio_pressed
 
-func _on_audio_button_pressed() -> void:
+func _ready():
+	if AudioManager.is_audio_muted():
+		_swap_audio_buttons()
+		
+func _swap_audio_buttons():
 	$AudioButton.visible = not $AudioButton.visible
 	$NextAudioButton.visible = not $NextAudioButton.visible
 
@@ -19,8 +22,9 @@ func _on_audio_button_pressed() -> void:
 	next_audio_btn.set_name(name2)
 	audio_btn.set_name(name1)
 	
-	self.audio_pressed.emit()
-
+func _on_audio_button_pressed() -> void:
+	_swap_audio_buttons()
+	AudioManager.toggle_audio()
 
 func _on_retry_button_pressed() -> void:
 	self.retry_pressed.emit()

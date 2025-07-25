@@ -25,6 +25,7 @@ texture_margin_right = 32.0
 texture_margin_bottom = 40.0
 
 [node name="EndMenu" instance=ExtResource("1_g8qhe")]
+type = 2
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource("2_rkpef")
@@ -40,6 +41,11 @@ label_settings = SubResource("LabelSettings_8yncs")
 [node name="Back" parent="." index="3"]
 theme_override_styles/hover = SubResource("StyleBoxTexture_bfr1r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_32hcy")
+
+[node name="RetryButton" parent="TopBar" index="3"]
+visible = false
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 
 [editable path="Play"]
 [editable path="Back"]

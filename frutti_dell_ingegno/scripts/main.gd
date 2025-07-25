@@ -29,6 +29,7 @@ func _on_menu_play_pressed() -> void:
 	add_child(next_scene)
 
 func _on_reset():
+	AudioManager.reset()
 	GameLogic.reset()
 	SystemEquationsFactory.reset()
 	get_tree().reload_current_scene()

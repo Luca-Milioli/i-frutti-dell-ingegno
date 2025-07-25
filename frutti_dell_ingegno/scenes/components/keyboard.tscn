@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://cij8bimtkjtsw"]
 
 [ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
-[ext_resource type="Texture2D" uid="uid://bco0quon0hlfe" path="res://art/graphics/Calc.png" id="2_1yngc"]
-[ext_resource type="Texture2D" uid="uid://dsu45cyrr5xof" path="res://art/graphics/CalculatorDisplay.png" id="3_drl6p"]
+[ext_resource type="Texture2D" uid="uid://cc0cxvxr64k84" path="res://art/graphics/Calc.png" id="2_1yngc"]
+[ext_resource type="Texture2D" uid="uid://dub35y28y8xmp" path="res://art/graphics/CalculatorDisplay.png" id="3_drl6p"]
 [ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_soaf0"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_crcmg"]
 [ext_resource type="StyleBox" uid="uid://b5yb3flb6n6xl" path="res://art/styleboxes/normal_button_square.tres" id="5_crq44"]
