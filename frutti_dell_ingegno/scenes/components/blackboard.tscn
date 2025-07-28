@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bn5tlh1a225fr"]
 
-[ext_resource type="Script" uid="uid://dbx8nhewouxs" path="res://scripts/gui/components/blackboard.gd" id="1_k6mxe"]
+[ext_resource type="Script" uid="uid://y63rnbtsta4f" path="res://scripts/gui/components/blackboard.gd" id="1_k6mxe"]
 
 [node name="Blackboard" type="VBoxContainer"]
 anchors_preset = 15

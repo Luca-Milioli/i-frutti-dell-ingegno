@@ -33,12 +33,12 @@ func _on_answer_button_pressed() -> void:
 			int($Blackboard/FinalEquation/Rhs.get_text()), $Blackboard/FinalEquation.get_equation()
 		)
 		Utils.recursive_disable_buttons($AnswerButton, true)
-		if GameLogic.get_current_round() != GameLogic.MAX_ROUND:
+		if GameLogic.get_current_round() - 1 != GameLogic.MAX_ROUND:
 			$AnswerButton/Text.set_text("Inserisci risposta")
+			Utils.recursive_disable_buttons($AnswerButton, false)
 			await $Blackboard.kill()
-			Utils.recursive_disable_buttons($AnswerButton, false)
 		else:
-			Utils.recursive_disable_buttons($AnswerButton, false)
+			Utils.recursive_disable_buttons($AnswerButton, true)
 			await $Blackboard.kill()
 
 
