@@ -25,7 +25,10 @@ func setup(equation: Equation) -> void:
 
 		if i < size - 1:
 			var sign = preload(PATH_TO_SCENES + "sign.tscn").instantiate()
-			sign.set_texture(load(PATH_TO_SIGN + equation.get_sign()[i] + ".png"))
+			var sign_name = equation.get_sign()[i]
+			if sign_name == ":":
+				sign_name = "division"
+			sign.set_texture(load(PATH_TO_SIGN + sign_name + ".png"))
 			add_child(sign)
 
 	var eq = preload(PATH_TO_SCENES + "sign.tscn").instantiate()

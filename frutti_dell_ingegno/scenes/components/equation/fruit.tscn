@@ -1,7 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bil7737y78aod"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_41s0r"]
-load_path = "res://.godot/imported/albicocca.png-ca7d2f14c88cdfb2eb194987cab445b0.ctex"
+[gd_scene format=3 uid="uid://bil7737y78aod"]
 
 [node name="Fruit" type="TextureRect"]
 custom_minimum_size = Vector2(85, 85)
@@ -18,5 +15,4 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("CompressedTexture2D_41s0r")
 expand_mode = 1
