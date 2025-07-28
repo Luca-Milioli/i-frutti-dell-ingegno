@@ -11,3 +11,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 script = ExtResource("1_k6mxe")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

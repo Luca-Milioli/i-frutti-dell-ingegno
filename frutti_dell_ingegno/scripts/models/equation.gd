@@ -48,8 +48,9 @@ func calculate_result() -> int:
 	return res
 
 func _to_string() -> String:
-	var text : String
-	var text2 : String
+	var text : String = ""
+	var text2 : String = ""
+	
 	for i in range(0, get_sign().size()):
 		text += str(get_coeff()[i])
 		text += str(get_variables()[i])

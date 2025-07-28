@@ -42,11 +42,6 @@ label_settings = SubResource("LabelSettings_8yncs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bfr1r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_32hcy")
 
-[node name="RetryButton" parent="TopBar" index="3"]
-visible = false
-
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-
 [editable path="Play"]
 [editable path="Back"]
 [editable path="TopBar"]

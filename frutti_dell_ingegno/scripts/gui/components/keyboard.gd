@@ -5,8 +5,6 @@ var drag_offset: Vector2
 
 func _ready() -> void:
 	_connect_buttons(self)
-	$Backspace.toggle_mode = false
-	$CloseButton.toggle_mode = false
 
 func reset():
 	$Display/Label.set_text("Insert result...")
@@ -14,7 +12,6 @@ func reset():
 func _connect_buttons(node):
 	for child in node.get_children():
 		if child is BaseButton and child != $CloseButton:
-			child.toggle_mode = true
 			child.connect("pressed", _on_button_pressed.bind(child))
 		else:
 			_connect_buttons(child)
@@ -48,7 +45,7 @@ func _gui_input(event):
 		else:
 			is_dragging = false
 
-func _process(delta):
+func _process(_delta):
 	if is_dragging:
 		var mouse_pos = get_viewport().get_mouse_position() - drag_offset
 		var screen_size = get_viewport_rect().size
@@ -69,6 +66,8 @@ func _unhandled_input(event):
 			var button_name = "Button" + str(index)
 			var button_node = $ButtonsContainer.get_node(button_name)
 			button_node.pressed.emit()
+			button_node.toggle_mode = true
 			button_node.set_pressed_no_signal(true)
 			await get_tree().create_timer(0.2).timeout
 			button_node.set_pressed_no_signal(false)
+			button_node.toggle_mode = false
