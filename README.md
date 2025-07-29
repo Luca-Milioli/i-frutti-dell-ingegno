@@ -1,4 +1,4 @@
-# i-frutti-dell-ingegno
+# Frutti dell'ingegno
 
 Math game developed by Luca Milioli and Federico Rigolon for https://www.spreafico.net/
 
