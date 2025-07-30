@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func reset():
 	$Display/Label.set_text("Insert result...")
+	self.visible = false
 
 
 func _connect_buttons(node):
@@ -79,3 +80,8 @@ func _unhandled_input(event):
 			await get_tree().create_timer(0.2).timeout
 			button_node.set_pressed_no_signal(false)
 			button_node.toggle_mode = false
+
+
+func _on_visibility_changed() -> void:
+	if self.visible:
+		AudioManager.popup()

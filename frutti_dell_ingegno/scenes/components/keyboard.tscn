@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cij8bimtkjtsw"]
+[gd_scene load_steps=16 format=3 uid="uid://cij8bimtkjtsw"]
 
 [ext_resource type="Script" uid="uid://br08m7m4dqck3" path="res://scripts/gui/components/keyboard.gd" id="1_v02ci"]
 [ext_resource type="Texture2D" uid="uid://cc0cxvxr64k84" path="res://art/graphics/Calc.png" id="2_1yngc"]
@@ -10,6 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://dca8ghc2m7vq5" path="res://art/styleboxes/label_settings_32.tres" id="7_crq44"]
 [ext_resource type="Texture2D" uid="uid://b6phgk3t2uuqc" path="res://art/graphics/buttons/Backspace.png" id="8_lowah"]
 [ext_resource type="Texture2D" uid="uid://qkkqq11ieivp" path="res://art/graphics/buttons/Backspace_hover.png" id="9_1yngc"]
+[ext_resource type="Script" uid="uid://qoc20m3nksfy" path="res://scripts/gui/components/custom_button.gd" id="11_hl3es"]
 [ext_resource type="StyleBox" uid="uid://j41qyryuoe82" path="res://art/styleboxes/close_button.tres" id="11_hy5n8"]
 [ext_resource type="StyleBox" uid="uid://bcx5dycbjfqlt" path="res://art/styleboxes/close_button_hover.tres" id="12_hl3es"]
 
@@ -252,6 +253,7 @@ texture_pressed = ExtResource("9_1yngc")
 texture_hover = ExtResource("9_1yngc")
 texture_disabled = ExtResource("8_lowah")
 ignore_texture_size = true
+script = ExtResource("11_hl3es")
 
 [node name="CloseButton" type="Button" parent="."]
 layout_mode = 1
@@ -268,6 +270,11 @@ theme_override_styles/disabled = ExtResource("11_hy5n8")
 theme_override_styles/hover = ExtResource("12_hl3es")
 theme_override_styles/pressed = ExtResource("12_hl3es")
 theme_override_styles/normal = ExtResource("11_hy5n8")
+script = ExtResource("11_hl3es")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Backspace" to="Backspace" method="_on_pressed"]
+[connection signal="pressed" from="CloseButton" to="CloseButton" method="_on_pressed"]
 
 [editable path="ButtonsContainer/Button1"]
 [editable path="ButtonsContainer/Button2"]
