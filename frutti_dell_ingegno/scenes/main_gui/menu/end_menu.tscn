@@ -51,6 +51,7 @@ text = "Torna al sito"
 label_settings = SubResource("LabelSettings_bugxa")
 
 [node name="ResetPopup" parent="." index="4" instance=ExtResource("6_wqo5a")]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 200.0
 offset_top = 193.0
@@ -67,7 +68,6 @@ offset_bottom = 101.0
 grow_vertical = 1
 
 [node name="RetryButton" parent="TopBar" index="3"]
-visible = false
 disabled = true
 
 [connection signal="tree_entered" from="Play" to="." method="_on_play_tree_entered"]

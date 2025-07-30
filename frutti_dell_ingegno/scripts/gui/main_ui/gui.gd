@@ -4,19 +4,21 @@ extends CommonUI
 func game_over():
 	super.fade_out($TopBar/Text)
 
+
 func _on_tree_entered():
 	await super.fade_in($".")
-	
+
 	var tween = create_tween()
 	$AnswerButton.set_visible(true)
 	$AnswerButton.modulate.a = 0.0
 	tween.tween_property($AnswerButton, "modulate:a", 1.0, 1.0)
-	
+
 	$TutorialPopup.queue_free()
 	$Blackboard.visible = true
 	$Blackboard.first_animation()
 	$TopBar.text_first_entrance()
 	Utils.recursive_disable_buttons(self, false)
+
 
 func _on_tree_entered_with_tutorial() -> void:
 	Utils.recursive_disable_buttons(self, true)
