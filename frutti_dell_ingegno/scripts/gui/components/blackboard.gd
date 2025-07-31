@@ -20,6 +20,7 @@ func setup(system_equation: SystemEquation):
 		else:
 			add_child(scene)
 
+
 func kill_children():
 	for child in get_children():
 		remove_child(child)

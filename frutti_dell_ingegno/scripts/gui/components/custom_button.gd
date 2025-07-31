@@ -15,7 +15,7 @@ func _on_visibility_changed() -> void:
 
 func fade_out() -> void:
 	Utils.recursive_disable_buttons(self, true)
-	
+
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.5)
 	await tween.finished
