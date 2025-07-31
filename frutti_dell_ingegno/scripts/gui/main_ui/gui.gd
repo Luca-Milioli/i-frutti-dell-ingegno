@@ -8,6 +8,8 @@ func game_over():
 func _on_tree_entered() -> void:
 	Utils.recursive_disable_buttons(self, true)
 	await super.fade_in($".")
+
+	$TutorialPopup.visible = true
 	await super.fade_in($TutorialPopup)
 	Utils.recursive_disable_buttons($TutorialPopup, false)
 
@@ -30,7 +32,7 @@ func _appear_objects() -> void:
 
 
 func _on_answer_button_pressed() -> void:
-	if $AnswerButton/Text.get_text() == "Inserisci risposta" and not $AnswerButton.disabled:
+	if $AnswerButton/Text.get_text() == "Inserisci risposta":
 		Utils.recursive_disable_buttons(self, true)
 		$Keyboard.visible = true
 		await super.fade_in($Keyboard, 1.0, 0.8)
