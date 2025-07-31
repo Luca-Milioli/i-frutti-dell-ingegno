@@ -36,3 +36,4 @@ func win() -> bool:
 
 func reset() -> void:
 	self._correct_answers = 0
+	self._current_round = 1

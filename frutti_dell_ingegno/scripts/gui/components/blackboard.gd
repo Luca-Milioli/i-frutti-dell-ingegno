@@ -3,6 +3,7 @@ extends VBoxContainer
 class_name Blackboard
 
 signal killed
+signal children_appaered
 
 
 func setup(system_equation: SystemEquation):
@@ -13,8 +14,11 @@ func setup(system_equation: SystemEquation):
 		scene.setup(eq)
 		if eq == system_equation.get_equations()[-1]:
 			scene.setup_last_one()
-		add_child(scene)
-
+			add_child(scene)
+			await scene.tween_finished
+			self.children_appaered.emit()
+		else:
+			add_child(scene)
 
 func kill_children():
 	for child in get_children():

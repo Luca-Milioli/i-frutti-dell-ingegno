@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+signal tween_finished
+
 const PATH_TO_FRUIT = "res://art/graphics/fruit/"
 const PATH_TO_SIGN = "res://art/graphics/signs/"
 const PATH_TO_SCENES = "res://scenes/components/equation/"
@@ -51,3 +53,4 @@ func _on_tree_entered() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.5)
 	await tween.finished
+	self.tween_finished.emit()

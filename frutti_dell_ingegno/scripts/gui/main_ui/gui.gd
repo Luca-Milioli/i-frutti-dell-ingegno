@@ -16,10 +16,16 @@ func _on_tutorial_popup_game_start() -> void:
 	Utils.recursive_disable_buttons(self, true)
 	await super.fade_out($TutorialPopup)
 	$TutorialPopup.queue_free()
+	
+	_appear_objects()
+	
+	Utils.recursive_disable_buttons(self, false)
+
+func _appear_objects() -> void:
 	$Blackboard.visible = true
 	$Blackboard.first_animation()
 	$TopBar.text_first_entrance()
-	Utils.recursive_disable_buttons(self, false)
+	$AnswerButton.visible = true
 
 
 func _on_answer_button_pressed() -> void:
@@ -32,14 +38,9 @@ func _on_answer_button_pressed() -> void:
 		GameLogic.answer_given(
 			int($Blackboard/FinalEquation/Rhs.get_text()), $Blackboard/FinalEquation.get_equation()
 		)
-		Utils.recursive_disable_buttons($AnswerButton, true)
-		if GameLogic.get_current_round() - 1 != GameLogic.MAX_ROUND:
-			$AnswerButton/Text.set_text("Inserisci risposta")
-			Utils.recursive_disable_buttons($AnswerButton, false)
-			await $Blackboard.kill()
-		else:
-			Utils.recursive_disable_buttons($AnswerButton, true)
-			await $Blackboard.kill()
+		$AnswerButton.fade_out()
+		
+		await $Blackboard.kill()
 
 
 func kill():
@@ -60,3 +61,9 @@ func _on_confirm_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	_close_keyboard()
+
+
+func _on_blackboard_children_appaered() -> void:
+	if GameLogic.get_current_round() != 1:	# if it's first round it will appear in _appear_objects()
+		$AnswerButton/Text.set_text("Inserisci risposta")
+		$AnswerButton.visible = true

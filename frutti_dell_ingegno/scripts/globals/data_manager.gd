@@ -7,7 +7,7 @@ var data: Array
 
 static func get_max_rounds():
 	var file = FileAccess.open(DATA_PATH, FileAccess.READ)
-	var rounds = file.get_line().to_int()
+	var rounds = file.get_line().to_int() + 1
 	file.close()
 
 	return rounds
