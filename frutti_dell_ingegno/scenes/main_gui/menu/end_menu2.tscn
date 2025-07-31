@@ -42,10 +42,6 @@ label_settings = SubResource("LabelSettings_8yncs")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bfr1r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_32hcy")
 
-[node name="ResetPopup" parent="." index="4"]
-visible = false
-modulate = Color(1, 1, 1, 1)
-
 [editable path="Play"]
 [editable path="Back"]
 [editable path="TopBar"]
