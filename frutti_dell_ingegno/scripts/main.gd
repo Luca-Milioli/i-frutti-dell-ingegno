@@ -12,7 +12,9 @@ func _on_end_menu_back_pressed():
 
 
 func _run():
+	$Menu.queue_free()
 	await get_tree().process_frame
+
 	await _create_rounds()
 
 	var win = GameLogic.win()
@@ -59,3 +61,8 @@ func _create_rounds():
 
 		await $Gui/Blackboard.killed
 	gui.game_over()
+
+
+func _on_child_entered_tree(node: Node) -> void:
+	if has_node("FullScreenButton"):
+		move_child.call_deferred($FullScreenButton, -1)
