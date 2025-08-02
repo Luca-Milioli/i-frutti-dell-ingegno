@@ -1,15 +1,15 @@
 [gd_scene load_steps=20 format=3 uid="uid://b8srycxdomt88"]
 
 [ext_resource type="PackedScene" uid="uid://bieiqc1mo6u2r" path="res://scenes/components/top_bar.tscn" id="1_53q0q"]
-[ext_resource type="Script" uid="uid://ddpkn3ct6k118" path="res://scripts/gui/main_ui/gui.gd" id="1_fvce3"]
+[ext_resource type="Script" uid="uid://bfkqw3vumi2fi" path="res://scripts/gui/main_ui/gui.gd" id="1_fvce3"]
 [ext_resource type="PackedScene" uid="uid://mgklm4qm7xq8" path="res://scenes/components/popups/tutorial.tscn" id="2_8h14w"]
 [ext_resource type="PackedScene" uid="uid://bn5tlh1a225fr" path="res://scenes/components/blackboard.tscn" id="2_53q0q"]
-[ext_resource type="Texture2D" uid="uid://fd6hsikuib0w" path="res://art/graphics/backgrounds/GuiBackground.jpg" id="2_k8xsf"]
+[ext_resource type="Texture2D" uid="uid://d0wd7mlmu7bhm" path="res://art/graphics/backgrounds/GuiBackground.jpg" id="2_k8xsf"]
 [ext_resource type="PackedScene" uid="uid://b58mhp2m3rr8y" path="res://scenes/components/popups/reset_popup.tscn" id="3_k8xsf"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="3_ocqor"]
-[ext_resource type="FontFile" uid="uid://i0ucl8jkj7a5" path="res://art/font/Roc_Grotesk_Bold.ttf" id="4_8h14w"]
+[ext_resource type="FontFile" uid="uid://c3ii6qbpg4ulc" path="res://art/font/Roc_Grotesk_Bold.ttf" id="4_8h14w"]
 [ext_resource type="PackedScene" uid="uid://cij8bimtkjtsw" path="res://scenes/components/keyboard.tscn" id="9_gn6ma"]
-[ext_resource type="Script" uid="uid://w03yj45yvjjm" path="res://scripts/gui/components/custom_button.gd" id="10_w77y4"]
+[ext_resource type="Script" uid="uid://ce6ayxwpog42v" path="res://scripts/gui/components/custom_button.gd" id="10_w77y4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_k8xsf"]
 font = ExtResource("4_8h14w")
