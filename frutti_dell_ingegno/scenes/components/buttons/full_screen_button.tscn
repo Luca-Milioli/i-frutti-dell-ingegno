@@ -16,6 +16,7 @@ offset_right = -433.0
 offset_bottom = -313.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 texture_normal = ExtResource("1_rxsfy")
 texture_pressed = ExtResource("2_a4oql")
 texture_hover = ExtResource("2_a4oql")
