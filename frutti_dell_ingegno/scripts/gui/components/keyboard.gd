@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func reset():
-	$Display/Label.set_text("Insert result...")
+	$Display/Label.set_text("Scrivi il numero")
 	set_visible(false)
 
 
@@ -21,14 +21,14 @@ func _connect_buttons(node):
 			_connect_buttons(child)
 
 
-func _new_text(button_pressed) -> StringName:
+func _new_text(button_pressed) -> String:
 	if button_pressed == $Backspace:
 		return ""
 
 	var text = $Display/Label.get_text()
 	var replace = false
 
-	if text == "" or text == "0" or text == "Insert result...":
+	if text == "" or text == "0" or text == "Scrivi il numero":
 		replace = true
 
 	if (int(text) <= 99 or text == "") and button_pressed != $Confirm:

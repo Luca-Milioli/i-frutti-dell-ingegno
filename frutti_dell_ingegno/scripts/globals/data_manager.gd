@@ -1,7 +1,10 @@
+## Class that access and store data from csv.
 extends Node
+
 class_name DataManager
 
 const DATA_PATH = "res://data/data_equation.csv.txt"
+
 var data: Array
 
 
@@ -13,12 +16,16 @@ static func get_max_rounds():
 	return rounds
 
 
-func read_csv(separator = ",") -> Array:
-	var file := FileAccess.open(self.DATA_PATH, FileAccess.READ)
+func read_csv(path: String = DATA_PATH, separator = ",") -> void:
+	if not self.data.is_empty():
+		return
+	
+	
+	var file := FileAccess.open(path, FileAccess.READ)
 
 	if not file:
 		push_error("Error, data file not found.")
-		return []
+		return
 
 	# first line is MAX ROUNDS
 	file.get_line()
@@ -56,7 +63,6 @@ func read_csv(separator = ",") -> Array:
 						key = "sign"
 				row_data[key].append(value)
 			system.append(row_data)
-		data.append(system)
+		self.data.append(system)
 
 	file.close()
-	return data

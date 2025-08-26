@@ -90,6 +90,10 @@ offset_top = 37.0
 offset_right = 906.0
 offset_bottom = 101.0
 
+[node name="Text" parent="TopBar" index="2"]
+modulate = Color(1, 1, 1, 0)
+text = "Esamina le equazioni già svolte, poi calcola e risolvi l’ultima."
+
 [node name="Blackboard" parent="." instance=ExtResource("2_53q0q")]
 visible = false
 layout_mode = 1
@@ -116,7 +120,6 @@ label_settings = SubResource("LabelSettings_k8xsf")
 
 [node name="Keyboard" parent="." instance=ExtResource("9_gn6ma")]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,6 +157,7 @@ script = ExtResource("10_w77y4")
 [connection signal="pressed" from="Keyboard/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Keyboard/CloseButton" to="Keyboard/CloseButton" method="_on_pressed"]
 
+[editable path="TopBar"]
 [editable path="AnswerButton"]
 [editable path="Keyboard"]
 [editable path="Keyboard/ButtonsContainer/Button1"]

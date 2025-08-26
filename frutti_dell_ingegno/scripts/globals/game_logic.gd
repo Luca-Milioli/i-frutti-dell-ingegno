@@ -2,7 +2,9 @@ extends Node  # needed for autoload (singleton)
 
 var MAX_ROUND
 var _current_round: int = 1
-var _correct_answers: int = 0
+
+signal round_finished
+signal wrong_answer
 
 
 func _ready() -> void:
@@ -17,23 +19,20 @@ func get_current_round() -> int:
 	return self._current_round
 
 
-func get_correct_answers() -> int:
-	return self._correct_answers
+func connect_to_gui(gui: Node) -> void:
+	self.round_finished.connect(gui._on_round_finished)
+	self.wrong_answer.connect(gui._on_wrong_answer)
 
 
 func answer_given(answer: int, equation: Equation) -> void:
 	if answer == equation.calculate_result():
+		self.round_finished.emit()
+		self._current_round += 1
 		AudioManager.correct()
-		_correct_answers += 1
 	else:
+		self.wrong_answer.emit()
 		AudioManager.wrong()
-	_current_round += 1
-
-
-func win() -> bool:
-	return self._correct_answers >= MAX_ROUND
 
 
 func reset() -> void:
-	self._correct_answers = 0
 	self._current_round = 1

@@ -12,7 +12,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_nts21"]
 font = ExtResource("4_p8s5q")
-font_size = 54
+font_size = 40
 font_color = Color(0.101961, 0.0705882, 0.0784314, 1)
 
 [node name="TopBar" type="HBoxContainer"]
@@ -55,6 +55,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 label_settings = SubResource("LabelSettings_nts21")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="RetryButton" type="TextureButton" parent="."]
 visible = false

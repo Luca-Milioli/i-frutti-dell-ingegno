@@ -17,21 +17,15 @@ func _run():
 
 	await _create_rounds()
 
-	var win = GameLogic.win()
+	var win_menu = preload("res://scenes/main_gui/menu/end_menu.tscn").instantiate()
 
-	var next_scene: Node
-	if win:
-		next_scene = preload("res://scenes/main_gui/menu/end_menu.tscn").instantiate()
-	else:
-		next_scene = preload("res://scenes/main_gui/menu/end_menu2.tscn").instantiate()
-
-	next_scene.back_pressed.connect(_on_end_menu_back_pressed)
-	next_scene.play_pressed.connect(_on_reset)
+	win_menu.back_pressed.connect(_on_end_menu_back_pressed)
+	win_menu.play_pressed.connect(_on_reset)
 
 	await $Gui.kill()
 	$Gui.queue_free()
 
-	add_child(next_scene)
+	add_child(win_menu)
 
 
 func _on_menu_play_pressed() -> void:
@@ -45,7 +39,6 @@ func _on_menu_play_pressed() -> void:
 func _on_reset():
 	AudioManager.reset()
 	GameLogic.reset()
-	SystemEquationsFactory.reset()
 	get_tree().reload_current_scene()
 
 
