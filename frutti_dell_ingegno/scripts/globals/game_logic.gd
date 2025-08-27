@@ -1,6 +1,6 @@
 ## Logic of the game such as checking if an answer is correct.
 ## Singleton.
-extends Node  # needed for autoload (singleton)
+extends Node  # needed for autoload (singleton)ù
 
 ## Max number of round in the same match.
 var MAX_ROUND: int

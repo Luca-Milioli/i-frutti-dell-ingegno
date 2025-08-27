@@ -1,5 +1,4 @@
-## Singleton Factory that creates SystemEquation object. It extends DataManager,
-## so it can read data from csv.
+## Singleton Factory that creates SystemEquation object. It extends DataManager, so it can read data from csv.
 extends DataManager
 
 ## Stores data. It removes elements already created. When it's empty it copies data from

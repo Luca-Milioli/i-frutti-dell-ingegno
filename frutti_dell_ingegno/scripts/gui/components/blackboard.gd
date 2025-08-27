@@ -1,6 +1,5 @@
 ## Class that represent the view of a blackboard. It shows whole the system.
 extends VBoxContainer
-
 class_name Blackboard
 
 ## Emiited when it fades out.

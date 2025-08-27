@@ -1,6 +1,5 @@
 ## Class that represent a keyboard.
 extends Control
-
 class_name Keyboard
 
 ## True if it's dragging.

@@ -1,7 +1,5 @@
-## View of the game. It contains a Blackboard, a Keyboard... and manages theirs
-## entrances and exits.
+## View of the game. It contains a Blackboard, a Keyboard... and manages theirs entrances and exits.
 extends CommonUI
-
 class_name Gui
 
 

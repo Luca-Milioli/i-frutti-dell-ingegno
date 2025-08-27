@@ -1,6 +1,5 @@
 ## Script that manages every game menu (start menu, win menu, lose menu, ...).
 extends CommonUI
-
 class_name Menu
 
 ## 0 -> StartMenu, 1 -> WinMenu, 2 -> LoseMenu

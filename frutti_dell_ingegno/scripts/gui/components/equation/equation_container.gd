@@ -1,6 +1,5 @@
 ## Class that represent a view container for an equation.
 extends HBoxContainer
-
 class_name EquationContainer
 
 ## Emitted when animations are finished.
