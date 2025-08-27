@@ -1,28 +1,34 @@
+## Model class that represent an equation system.
 class_name SystemEquation
 
+## Array of the equations in the system.
 var _equations: Array[Equation]
+## Number of equations in the system
 var _n_equation: int
-var _final_result: int
 
 
+## Constructor method.
 func _init(equations: Array[Equation], _score: int = 1) -> void:
 	self._equations = equations
 	self._n_equation = equations.size()
-	self._final_result = self._equations[_n_equation - 1].calculate_result()
 
 
+## Getter for _equations.
 func get_equations() -> Array[Equation]:
 	return self._equations
 
 
+## Returns the result of the last equation (the question).
 func get_final_result() -> int:
-	return self._final_result
+	return self._equations[_n_equation - 1].calculate_result()
 
 
+## Getter for number of equations.
 func get_n_equation() -> int:
 	return self._n_equation
 
 
+## Method str().
 func _to_string() -> String:
 	var text = ""
 	var i = 1

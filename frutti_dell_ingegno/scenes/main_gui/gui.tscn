@@ -152,7 +152,6 @@ script = ExtResource("10_w77y4")
 [connection signal="pressed" from="AnswerButton" to="." method="_on_answer_button_pressed"]
 [connection signal="visibility_changed" from="AnswerButton" to="AnswerButton" method="_on_visibility_changed"]
 [connection signal="pressed" from="Keyboard/Confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="Keyboard/Confirm" to="Blackboard" method="_on_confirm_pressed"]
 [connection signal="pressed" from="Keyboard/Backspace" to="Keyboard/Backspace" method="_on_pressed"]
 [connection signal="pressed" from="Keyboard/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="Keyboard/CloseButton" to="Keyboard/CloseButton" method="_on_pressed"]

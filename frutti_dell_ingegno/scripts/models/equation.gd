@@ -1,12 +1,18 @@
+## Class model that represent an Equation.
 extends Object
 class_name Equation
 
+## Array of coefficients.
 var _coeffs: Array
+## Array of fruit names.
 var _variables: Array
+## Array of values of variables.
 var _values: Array
+## Array of signs between values.
 var _sign: Array
 
 
+## Constructor method.
 func _init(coeff: Array, variables: Array, values: Array, sign: Array):
 	self._coeffs = coeff
 	self._variables = variables
@@ -14,26 +20,32 @@ func _init(coeff: Array, variables: Array, values: Array, sign: Array):
 	self._sign = sign
 
 
+## Getter for coeffs.
 func get_coeff():
 	return self._coeffs
 
 
+## Getter for variables.
 func get_variables():
 	return self._variables
 
 
+## Getter for values.
 func get_values():
 	return self._values
 
 
+## Getter for signs.
 func get_sign():
 	return self._sign
 
 
+## Returns number of variables in the equation.
 func get_size():
 	return self._variables.size()
 
 
+## Returns the result of the left hand side expression.
 func calculate_result() -> int:
 	var res = get_coeff()[0] * get_values()[0]
 
@@ -55,6 +67,7 @@ func calculate_result() -> int:
 	return res
 
 
+## Method str().
 func _to_string() -> String:
 	var text: String = ""
 	var text2: String = ""

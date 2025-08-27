@@ -1,19 +1,27 @@
+## Class that represent a keyboard.
 extends Control
 
+class_name Keyboard
+
+## True if it's dragging.
 var is_dragging: bool = false
+## Drag offset since last frame.
 var drag_offset: Vector2
 
 
+## Connects buttons signals.
 func _ready() -> void:
 	_connect_buttons(self)
 
 
-func reset():
+## Reset display text and makes itself invisible.
+func reset() -> void:
 	$Display/Label.set_text("Scrivi il numero")
 	set_visible(false)
 
 
-func _connect_buttons(node):
+## Connects buttons "pressed" signal.
+func _connect_buttons(node: Node) -> void:
 	for child in node.get_children():
 		if child is BaseButton and child != $CloseButton:
 			child.connect("pressed", _on_button_pressed.bind(child))
@@ -21,7 +29,8 @@ func _connect_buttons(node):
 			_connect_buttons(child)
 
 
-func _new_text(button_pressed) -> String:
+## Return next display text when a button is pressed.
+func _new_text(button_pressed: BaseButton) -> String:
 	if button_pressed == $Backspace:
 		return ""
 
@@ -40,10 +49,12 @@ func _new_text(button_pressed) -> String:
 	return text
 
 
+## Called when a button is pressed. It updates display text.
 func _on_button_pressed(button):
 	$Display/Label.set_text(_new_text(button))
 
 
+## Starts and make drag.
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
@@ -53,6 +64,7 @@ func _gui_input(event):
 			is_dragging = false
 
 
+## Every frame it drags.
 func _process(_delta):
 	if is_dragging:
 		var mouse_pos = get_viewport().get_mouse_position() - drag_offset
@@ -65,6 +77,7 @@ func _process(_delta):
 		global_position = mouse_pos
 
 
+## Enables typing from the keyboard.
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
 		var key_string = OS.get_keycode_string(event.keycode)
@@ -82,6 +95,7 @@ func _unhandled_input(event):
 			button_node.toggle_mode = false
 
 
+## Plays a sound when it becomes visible.
 func _on_visibility_changed() -> void:
 	if self.visible:
 		AudioManager.popup()

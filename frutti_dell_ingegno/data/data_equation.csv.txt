@@ -1,4 +1,4 @@
-1
+2
 1,insalata,10,+,1,insalata,10,+,1,insalata,10
 1,insalata,10,+,1,mela,20,+,1,mela,20
 1,mela,20,-,1,arancia,4

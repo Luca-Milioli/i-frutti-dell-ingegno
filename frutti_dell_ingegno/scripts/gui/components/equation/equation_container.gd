@@ -1,18 +1,28 @@
+## Class that represent a view container for an equation.
 extends HBoxContainer
 
+class_name EquationContainer
+
+## Emitted when animations are finished.
 signal tween_finished
 
+## Path to directory where .png of fruits are saved.
 const PATH_TO_FRUIT = "res://art/graphics/fruit/"
+## Path to directory where .png of signs are saved.
 const PATH_TO_SIGN = "res://art/graphics/signs/"
+## Path to directory where equation-related scenes are saved.
 const PATH_TO_SCENES = "res://scenes/components/equation/"
 
+## The equation that this object contains.
 var _equation: Equation
 
 
+## Getter for _equation.
 func get_equation() -> Equation:
 	return self._equation
 
 
+## Inizialize the containers. It sets _equation, sets all the textures
 func setup(equation: Equation) -> void:
 	self._equation = equation
 	var size = equation.get_size()
@@ -42,11 +52,13 @@ func setup(equation: Equation) -> void:
 	add_child(res)
 
 
+## Changes the last equation because it has to be the question.
 func setup_last_one() -> void:
 	$Rhs.set_text("??")
 	self.set_name("FinalEquation")
 
 
+## Fades itself in.
 func _on_tree_entered() -> void:
 	self.get_parent().modulate.a = 1.0
 	self.modulate.a = 0.0
