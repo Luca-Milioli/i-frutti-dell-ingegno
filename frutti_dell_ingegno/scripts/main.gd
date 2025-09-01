@@ -6,7 +6,7 @@ class_name Main
 const URL = "https://spreafico.net/"
 
 
-## Makes the background transparent
+## Makes the background transparent.
 func _ready() -> void:
 	get_tree().root.transparent_bg = true
 
