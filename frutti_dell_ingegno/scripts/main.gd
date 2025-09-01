@@ -10,6 +10,15 @@ const URL = "https://spreafico.net/"
 func _ready() -> void:
 	get_tree().root.transparent_bg = true
 
+## Checks every frame the screen orientation and stops the game (mobile only).
+func _process(_delta):
+	var orientation = DisplayServer.screen_get_orientation()
+	if orientation == DisplayServer.SCREEN_PORTRAIT:
+		$SubViewportContainer/SubViewport/RotateWarning.visible = true
+		get_tree().paused = true
+	else:
+		$SubViewportContainer/SubViewport/RotateWarning.visible = false
+		get_tree().paused = false
 
 ## Redirects to the URL.
 func _on_end_menu_back_pressed():
