@@ -6,6 +6,11 @@ class_name Main
 const URL = "https://spreafico.net/"
 
 
+## Makes the background transparent
+func _ready() -> void:
+	get_tree().root.transparent_bg = true
+
+
 ## Redirects to the URL.
 func _on_end_menu_back_pressed():
 	if OS.get_name() == "Web":
