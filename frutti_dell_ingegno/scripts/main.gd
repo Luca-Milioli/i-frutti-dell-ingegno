@@ -17,7 +17,7 @@ func _on_end_menu_back_pressed():
 
 ## Called when it enters the tree. It makes the game start and wait until the end.
 func _run():
-	$Menu.queue_free()
+	$SubViewportContainer/SubViewport/Menu.queue_free()
 	await get_tree().process_frame
 
 	await _create_rounds()
@@ -27,17 +27,17 @@ func _run():
 	win_menu.back_pressed.connect(_on_end_menu_back_pressed)
 	win_menu.play_pressed.connect(_on_reset)
 
-	await $Gui.kill()
-	$Gui.queue_free()
+	await $SubViewportContainer/SubViewport/Gui.kill()
+	$SubViewportContainer/SubViewport/Gui.queue_free()
 
-	add_child(win_menu)
+	$SubViewportContainer/SubViewport.add_child(win_menu)
 
 
 ## Called when StartMenu button is pressed. Calls _run
 func _on_menu_play_pressed() -> void:
-	var menu = get_node("Menu")
+	var menu = $SubViewportContainer/SubViewport.get_node("Menu")
 	await menu.kill()
-	remove_child(menu)
+	$SubViewportContainer/SubViewport.remove_child(menu)
 	menu.queue_free()
 	_run()
 
@@ -55,17 +55,17 @@ func _create_rounds():
 	var gui = preload("res://scenes/main_gui/gui.tscn").instantiate()
 
 	gui.get_node("ResetPopup/SplitContainer/Go").pressed.connect(_on_reset)
-	add_child(gui)
+	$SubViewportContainer/SubViewport.add_child(gui)
 	for i in range(GameLogic.MAX_ROUND):
 		var system_equation = SystemEquationsFactory.make_system_equation()
 
-		$Gui/Blackboard.setup(system_equation)
+		$SubViewportContainer/SubViewport/Gui/Blackboard.setup(system_equation)
 
-		await $Gui/Blackboard.killed
+		await $SubViewportContainer/SubViewport/Gui/Blackboard.killed
 	gui.game_over()
 
 
 ## Called when a child is added. It moves FullScreenButton in last position.
 func _on_child_entered_tree(node: Node) -> void:
-	if has_node("FullScreenButton"):
-		move_child.call_deferred($FullScreenButton, -1)
+	if $SubViewportContainer/SubViewport.has_node("FullScreenButton"):
+		$SubViewportContainer/SubViewport.move_child.call_deferred($SubViewportContainer/SubViewport/FullScreenButton, -1)
