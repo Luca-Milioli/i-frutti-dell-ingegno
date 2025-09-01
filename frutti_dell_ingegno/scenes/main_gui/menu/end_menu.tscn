@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dujdqfwmue2ch"]
+[gd_scene load_steps=10 format=3 uid="uid://dujdqfwmue2ch"]
 
 [ext_resource type="PackedScene" uid="uid://c1t2pn4wepmpt" path="res://scenes/main_gui/menu/menu.tscn" id="1_albv7"]
-[ext_resource type="Texture2D" uid="uid://c0pnj5wcokv58" path="res://art/graphics/backgrounds/WinnerMenu.jpg" id="2_87tj7"]
+[ext_resource type="Texture2D" uid="uid://dypya765aay5r" path="res://art/graphics/backgrounds/WinnerBg.png" id="2_yb7sc"]
+[ext_resource type="FontFile" uid="uid://5qehjr47vqyi" path="res://art/font/SkippySharp.ttf" id="3_gt641"]
 [ext_resource type="PackedScene" uid="uid://bieiqc1mo6u2r" path="res://scenes/components/top_bar.tscn" id="3_pwu44"]
 [ext_resource type="FontFile" uid="uid://i0ucl8jkj7a5" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_yb7sc"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_gt641"]
 [ext_resource type="PackedScene" uid="uid://b58mhp2m3rr8y" path="res://scenes/components/popups/reset_popup.tscn" id="6_wqo5a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yb4r"]
+font = ExtResource("3_gt641")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bugxa"]
 font = ExtResource("3_yb7sc")
@@ -16,11 +22,11 @@ font_color = Color(0.0588235, 0.47451, 0.529412, 1)
 type = 1
 
 [node name="Background" parent="." index="0"]
-texture = ExtResource("2_87tj7")
+texture = ExtResource("2_yb7sc")
 
 [node name="Text" parent="." index="1"]
-visible = false
-text = ""
+text = "Hai completato il gioco! Rigioca per migliorare le tue capacità!"
+label_settings = SubResource("LabelSettings_0yb4r")
 
 [node name="Play" parent="." index="2"]
 offset_left = 12.0
