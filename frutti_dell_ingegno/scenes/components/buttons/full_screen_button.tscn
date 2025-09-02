@@ -5,17 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b3tesaxhwkm8h" path="res://art/graphics/buttons/FullscreenHover.png" id="2_a4oql"]
 
 [node name="FullScreenButton" type="TextureButton"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -497.0
-offset_top = -377.0
-offset_right = -433.0
-offset_bottom = -313.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 79.0
+offset_bottom = 79.0
 focus_mode = 0
 texture_normal = ExtResource("1_rxsfy")
 texture_pressed = ExtResource("2_a4oql")
