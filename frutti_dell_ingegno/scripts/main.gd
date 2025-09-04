@@ -2,25 +2,29 @@
 extends Node
 class_name Main
 
+
 ## Connects some signal of get_window and calculate the top window.
 func _ready() -> void:
 	if OS.get_name() == "Web":
 		get_window().focus_entered.connect(_on_window_focus_entered)
 		get_window().focus_exited.connect(_on_window_focus_exited)
 
+
 ## When window is not in background anymore, it resumes the audio.
 func _on_window_focus_entered() -> void:
 	AudioManager.set_paused(false)
+
 
 ## When window goes in background, it pauses the audio.
 func _on_window_focus_exited() -> void:
 	AudioManager.set_paused(true)
 
+
 ## Resize viewport as viewportcontainer.
 ## Checks every frame the screen orientation and stops the game (mobile only).
 func _process(_delta):
 	$SubViewportContainer/SubViewport.size = $SubViewportContainer.size
-	
+
 	#var orientation = DisplayServer.screen_get_orientation()
 	#if orientation == DisplayServer.SCREEN_PORTRAIT:
 	#	$SubViewportContainer/SubViewport/RotateWarning.visible = true
@@ -29,18 +33,22 @@ func _process(_delta):
 	#	$SubViewportContainer/SubViewport/RotateWarning.visible = false
 	#	get_tree().paused = false
 
+
 ## Put the game and the audio in pause.
 func set_paused(paused: bool) -> void:
 	if paused != get_tree().paused:
 		get_tree().paused = paused
 		AudioManager.set_paused(paused)
 
+
 ## URL is the "parent" of the actual URL.
 ## When "back" button is pressed on menu, calls the URL using javascript eval function.
 ## if the game is a webexport. Quits the application otherwise.
 func _on_end_menu_back_pressed():
 	if OS.get_name() == "Web":
-		var URL = JavaScriptBridge.call("eval", "window.location.href.split('/').slice(0, -2).join('/');")
+		var URL = JavaScriptBridge.call(
+			"eval", "top.location.href.split('/').slice(0, -2).join('/');"
+		)
 		JavaScriptBridge.call("eval", "top.location.href = '" + URL + "';")
 	else:
 		get_tree().quit()
@@ -99,4 +107,6 @@ func _create_rounds():
 ## Called when a child is added. It moves FullScreenButton in last position.
 func _on_child_entered_tree(node: Node) -> void:
 	if $SubViewportContainer/SubViewport.has_node("FullScreenButton"):
-		$SubViewportContainer/SubViewport.move_child.call_deferred($SubViewportContainer/SubViewport/FullScreenButton, -1)
+		$SubViewportContainer/SubViewport.move_child.call_deferred(
+			$SubViewportContainer/SubViewport/FullScreenButton, -1
+		)
