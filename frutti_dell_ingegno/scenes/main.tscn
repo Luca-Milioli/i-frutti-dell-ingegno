@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bfd3x3pndqdlp" path="res://scenes/components/buttons/full_screen_button.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_0wfyh")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+process_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

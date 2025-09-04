@@ -2,29 +2,46 @@
 extends Node
 class_name Main
 
-## URL of site that it'll be redirected to.
-const URL = "https://spreafico.net/"
-
-
-## Makes the background transparent.
+## Connects some signal of get_window and calculate the top window.
 func _ready() -> void:
-	get_tree().root.transparent_bg = true
+	if OS.get_name() == "Web":
+		get_window().focus_entered.connect(_on_window_focus_entered)
+		get_window().focus_exited.connect(_on_window_focus_exited)
 
+## When window is not in background anymore, it resumes the audio.
+func _on_window_focus_entered() -> void:
+	AudioManager.set_paused(false)
+
+## When window goes in background, it pauses the audio.
+func _on_window_focus_exited() -> void:
+	AudioManager.set_paused(true)
+
+## Resize viewport as viewportcontainer.
 ## Checks every frame the screen orientation and stops the game (mobile only).
 func _process(_delta):
-	var orientation = DisplayServer.screen_get_orientation()
-	if orientation == DisplayServer.SCREEN_PORTRAIT:
-		$SubViewportContainer/SubViewport/RotateWarning.visible = true
-		get_tree().paused = true
-	else:
-		$SubViewportContainer/SubViewport/RotateWarning.visible = false
-		get_tree().paused = false
+	$SubViewportContainer/SubViewport.size = $SubViewportContainer.size
+	
+	#var orientation = DisplayServer.screen_get_orientation()
+	#if orientation == DisplayServer.SCREEN_PORTRAIT:
+	#	$SubViewportContainer/SubViewport/RotateWarning.visible = true
+	#	get_tree().paused = true
+	#else:
+	#	$SubViewportContainer/SubViewport/RotateWarning.visible = false
+	#	get_tree().paused = false
 
-## Redirects to the URL.
+## Put the game and the audio in pause.
+func set_paused(paused: bool) -> void:
+	if paused != get_tree().paused:
+		get_tree().paused = paused
+		AudioManager.set_paused(paused)
+
+## URL is the "parent" of the actual URL.
+## When "back" button is pressed on menu, calls the URL using javascript eval function.
+## if the game is a webexport. Quits the application otherwise.
 func _on_end_menu_back_pressed():
 	if OS.get_name() == "Web":
-		var js = Engine.get_singleton("JavaScriptBridge")
-		js.call("eval", "window.location.href = '" + URL + "';")
+		var URL = JavaScriptBridge.call("eval", "window.location.href.split('/').slice(0, -2).join('/');")
+		JavaScriptBridge.call("eval", "top.location.href = '" + URL + "';")
 	else:
 		get_tree().quit()
 
