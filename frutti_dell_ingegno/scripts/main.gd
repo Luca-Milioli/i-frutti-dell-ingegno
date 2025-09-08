@@ -2,10 +2,18 @@
 extends Node
 class_name Main
 
+## Window of browser. Different from get_window()
+var window
+## True if this game is running on mobile.
+var mobile: bool
 
 ## Connects some signal of get_window and calculate the top window.
 func _ready() -> void:
+	self.mobile = (
+		OS.has_feature("mobile") or OS.has_feature("web_ios") or OS.has_feature("web_android")
+	)
 	if OS.get_name() == "Web":
+		self.window = JavaScriptBridge.get_interface("window").parent
 		get_window().focus_entered.connect(_on_window_focus_entered)
 		get_window().focus_exited.connect(_on_window_focus_exited)
 
@@ -25,13 +33,13 @@ func _on_window_focus_exited() -> void:
 func _process(_delta):
 	$SubViewportContainer/SubViewport.size = $SubViewportContainer.size
 
-	#var orientation = DisplayServer.screen_get_orientation()
-	#if orientation == DisplayServer.SCREEN_PORTRAIT:
-	#	$SubViewportContainer/SubViewport/RotateWarning.visible = true
-	#	get_tree().paused = true
-	#else:
-	#	$SubViewportContainer/SubViewport/RotateWarning.visible = false
-	#	get_tree().paused = false
+	if self.mobile:
+		if window.matchMedia("(orientation: portrait)").matches:
+			$SubViewportContainer/SubViewport/RotateWarning.visible = true
+			set_paused(true)
+		else:
+			$SubViewportContainer/SubViewport/RotateWarning.visible = false
+			set_paused(false)
 
 
 ## Put the game and the audio in pause.

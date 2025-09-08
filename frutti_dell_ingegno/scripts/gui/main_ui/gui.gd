@@ -76,9 +76,10 @@ func _on_confirm_pressed() -> void:
 	var answer = $Keyboard/Display/Label.get_text()
 	await _close_keyboard()
 
-	Utils.recursive_disable_buttons($AnswerButton, true)
+	
 
 	if answer.is_valid_int():
+		Utils.recursive_disable_buttons($AnswerButton, true)
 		$Blackboard/FinalEquation/Rhs.set_text(answer)
 		GameLogic.answer_given(int(answer), $Blackboard/FinalEquation.get_equation())
 

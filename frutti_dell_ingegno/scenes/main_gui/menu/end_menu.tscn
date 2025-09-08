@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dujdqfwmue2ch"]
 
 [ext_resource type="PackedScene" uid="uid://c1t2pn4wepmpt" path="res://scenes/main_gui/menu/menu.tscn" id="1_albv7"]
-[ext_resource type="Texture2D" uid="uid://dypya765aay5r" path="res://art/graphics/backgrounds/WinnerBg.png" id="2_yb7sc"]
-[ext_resource type="FontFile" uid="uid://5qehjr47vqyi" path="res://art/font/SkippySharp.ttf" id="3_gt641"]
+[ext_resource type="Texture2D" uid="uid://mwkmu5pr4y0e" path="res://art/graphics/backgrounds/WinnerBg.png" id="2_yb7sc"]
+[ext_resource type="FontFile" uid="uid://bnkfqg231pyl3" path="res://art/font/SkippySharp.ttf" id="3_gt641"]
 [ext_resource type="PackedScene" uid="uid://bieiqc1mo6u2r" path="res://scenes/components/top_bar.tscn" id="3_pwu44"]
-[ext_resource type="FontFile" uid="uid://i0ucl8jkj7a5" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_yb7sc"]
+[ext_resource type="FontFile" uid="uid://d5y8d30n4b6b" path="res://art/font/Roc_Grotesk_Bold.ttf" id="3_yb7sc"]
 [ext_resource type="PackedScene" uid="uid://cixb2slrwfeax" path="res://scenes/components/buttons/custom_button.tscn" id="4_gt641"]
 [ext_resource type="PackedScene" uid="uid://b58mhp2m3rr8y" path="res://scenes/components/popups/reset_popup.tscn" id="6_wqo5a"]
 
@@ -25,6 +25,8 @@ type = 1
 texture = ExtResource("2_yb7sc")
 
 [node name="Text" parent="." index="1"]
+offset_top = -32.0
+offset_bottom = 73.0
 text = "Hai completato il gioco! Rigioca per migliorare le tue capacità!"
 label_settings = SubResource("LabelSettings_0yb4r")
 
